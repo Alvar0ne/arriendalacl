@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titulo: MyString
+  precio: 1
+  clasificacion: MyString
+  tipo: MyString
+  superficie: 1
+  dormitorio: 1
+  baño: 1
+  estacionamiento: 1
+  descripcion: MyText
+
+two:
+  titulo: MyString
+  precio: 1
+  clasificacion: MyString
+  tipo: MyString
+  superficie: 1
+  dormitorio: 1
+  baño: 1
+  estacionamiento: 1
+  descripcion: MyText

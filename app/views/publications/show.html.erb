@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @publication.titulo %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @publication.precio %>
+</p>
+
+<p>
+  <strong>Clasificacion:</strong>
+  <%= @publication.clasificacion %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @publication.tipo %>
+</p>
+
+<p>
+  <strong>Superficie:</strong>
+  <%= @publication.superficie %>
+</p>
+
+<p>
+  <strong>Dormitorio:</strong>
+  <%= @publication.dormitorio %>
+</p>
+
+<p>
+  <strong>Baño:</strong>
+  <%= @publication.baño %>
+</p>
+
+<p>
+  <strong>Estacionamiento:</strong>
+  <%= @publication.estacionamiento %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @publication.descripcion %>
+</p>
+
+<%= link_to 'Edit', edit_publication_path(@publication) %> |
+<%= link_to 'Back', publications_path %>
