@@ -1,0 +1,73 @@
+<div class="navigation">
+        <div class="container">
+          <div class="agileits-logo">
+            <h1><a href="index.html">Vendela <span class="w3agile">El mejor sitio para vender</span></a></h1>
+          </div>
+          <div class="navigation-right">
+        
+            <nav class="link-effect-3" id="link-effect-3">
+
+
+
+
+             <%if user_signed_in? %>
+
+
+              <ul >
+
+                 <li class="size-email"> Bienvenido <%= current_user.nombre %> </li>      <li class="size-cerrar"> | </li>
+
+                <li class="size-cerrar" ><%= link_to "Cerrar Sesion", destroy_user_session_path , method: :delete %></li> <li class="size-cerrar">| </li>
+
+
+
+
+              </ul>
+
+              <%end%>
+
+              <ul class="nav1 nav">
+                <li ><%= link_to "HOME", root_path %></li>
+                <li ><%= link_to "BUSCAR AVISO", publications_path %></li>
+                <li ><%= link_to "CREAR AVISO", new_publication_path %></li>
+                
+
+                <%if user_signed_in? %>
+
+                
+
+
+                <%else%>
+
+                <li ><%= link_to "INICIAR SESION", new_user_session_path  %>
+                <li ><%= link_to "CREAR CUENTA", new_user_registration_path  %>
+
+
+
+
+
+
+                <%end%>
+
+                 <li ><%= link_to "NOSOTROS", about_path %></li>
+                  
+    
+            
+        
+              </ul>
+
+           
+            </nav>
+              <!-- script-for-menu -->
+              <script>
+                 $( "span.menu" ).click(function() {
+                 $( "ul.nav1" ).slideToggle( 300, function() {
+                 // Animation complete.
+                  });
+                 });
+              </script>
+              <!-- //script-for-menu -->
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
