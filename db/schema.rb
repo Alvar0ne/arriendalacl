@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170413180153) do
+ActiveRecord::Schema.define(version: 20170413235553) do
+
+  create_table "comunas", force: :cascade do |t|
+    t.string   "nombre"
+    t.integer  "region_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comunas", ["region_id"], name: "index_comunas_on_region_id"
 
   create_table "publications", force: :cascade do |t|
     t.string   "titulo"
@@ -25,6 +34,19 @@ ActiveRecord::Schema.define(version: 20170413180153) do
     t.text     "descripcion"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "user_id"
+    t.integer  "comuna_id"
+    t.integer  "region_id"
+  end
+
+  add_index "publications", ["comuna_id"], name: "index_publications_on_comuna_id"
+  add_index "publications", ["region_id"], name: "index_publications_on_region_id"
+  add_index "publications", ["user_id"], name: "index_publications_on_user_id"
+
+  create_table "regions", force: :cascade do |t|
+    t.string   "nombre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
