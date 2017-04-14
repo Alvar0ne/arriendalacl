@@ -1,43 +1,291 @@
-<p id="notice"><%= notice %></p>
+<% provide(:page_title, 'Buscar Aviso') %>
+</br>
 
-<h1>Listing Publications</h1>
+<!DOCTYPE html>
+<html>
+  <head>
 
-<table>
-  <thead>
-    <tr>
-      <th>Titulo</th>
-      <th>Precio</th>
-      <th>Clasificacion</th>
-      <th>Tipo</th>
-      <th>Superficie</th>
-      <th>Dormitorio</th>
-      <th>Baño</th>
-      <th>Estacionamiento</th>
-      <th>Descripcion</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @publications.each do |publication| %>
-      <tr>
-        <td><%= publication.titulo %></td>
-        <td><%= publication.precio %></td>
-        <td><%= publication.clasificacion %></td>
-        <td><%= publication.tipo %></td>
-        <td><%= publication.superficie %></td>
-        <td><%= publication.dormitorio %></td>
-        <td><%= publication.baño %></td>
-        <td><%= publication.estacionamiento %></td>
-        <td><%= publication.descripcion %></td>
-        <td><%= link_to 'Show', publication %></td>
-        <td><%= link_to 'Edit', edit_publication_path(publication) %></td>
-        <td><%= link_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <style>
 
-<br>
 
-<%= link_to 'New Publication', new_publication_path %>
+    body
+        {
+            background: url('http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/07/white-background-9.jpg') fixed;
+            background-size: cover;
+            padding: 15px;
+            margin: 0;
+        }  
+
+
+    /**** BASE ****/
+body {
+    color: #888;   
+}
+a {
+    color: #03a1d1;
+    text-decoration: none!important;
+}
+
+/**** LAYOUT ****/
+.list-inline>li {
+    padding: 0 10px 0 0;
+}
+.container-pad {
+    padding: 30px 15px;
+}
+
+
+.sales {
+    background: #ffffff none repeat scroll 0 0;
+    border: 1px solid #d4d9e3;
+    display: inline-block;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 1px;
+    width: 100%;
+}
+
+
+
+.sales h2 {
+    color: #8492af;
+    float: left;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    padding: 9px 0 0;
+}
+.btn.btn-secondary.btn-lg.dropdown-toggle > span {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+.sales .dropdown-menu{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    border-radius: 8px;
+    width: 100%;
+    color: #787878;
+}
+.sales .btn-group.open .dropdown-toggle, .btn.active, .btn:active{
+    box-shadow: none;
+}
+.sales .dropdown-menu > a {
+    color: #787878;
+    display: inline-block;
+    font-weight: 800;
+    padding: 9px 0;
+    text-align: center;
+    width: 100%;
+}
+#my-cool-chart svg {
+    width: 100%;
+}
+.sales .dropdown-menu > a:hover{
+    color: #5584FF;   
+}
+
+
+/**** MODULE ****/
+.bgc-fff {
+    background-color: #fff!important;
+}
+.box-shad {
+    -webkit-box-shadow: 1px 1px 0 rgba(0,0,0,.2);
+    box-shadow: 1px 1px 0 rgba(0,0,0,.2);
+}
+.brdr {
+    border: 1px solid #ededed;
+}
+
+/* Font changes */
+.fnt-smaller {
+    font-size: .9em;
+}
+.fnt-lighter {
+    color: #bbb;
+}
+
+/* Padding - Margins */
+.pad-10 {
+    padding: 10px!important;
+}
+.mrg-0 {
+    margin: 0!important;
+}
+.btm-mrg-10 {
+    margin-bottom: 10px!important;
+}
+.btm-mrg-20 {
+    margin-bottom: 20px!important;
+}
+
+/* Color  */
+.clr-535353 {
+    color: #535353;
+}
+
+
+
+
+/**** MEDIA QUERIES ****/
+@media only screen and (max-width: 991px) {
+    #property-listings .property-listing {
+        padding: 5px!important;
+    }
+    #property-listings .property-listing a {
+        margin: 0;
+    }
+    #property-listings .property-listing .media-body {
+        padding: 10px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #property-listings .property-listing img {
+        max-width: 180px;
+    }
+}
+
+
+
+.negrit{
+  font-weight:black;
+  color:black !important;
+  opacity:0.8;
+}
+
+.rojito{
+  font-weight:black;
+  color:red !important;
+  opacity:0.8;
+}
+
+
+
+    </style>
+
+    </head>
+
+
+    <body>
+
+
+
+
+<div class="col-md-9 ">
+
+
+
+<% @publications.each do |publication| %>
+
+<div class="row">
+                        <div class="col-md-10">
+
+
+
+
+                            <div class="sales">
+
+                              <div class="col-md-5">
+
+
+              
+                              
+                                <h2> <%= link_to publication.titulo, publication %> </h2>
+                            </br>
+                            </br>
+
+                            <%= publication.region.nombre %>
+                             </br>
+                             <h2 class="negrit"><%= publication.comuna.nombre %></h2>
+                              </br>
+                              </br>
+                              </br>
+                              </br>
+                                <%= publication.display_day_published %> 
+
+                            </div>
+
+                            <div class="col-md-3">
+
+
+
+                            </div>
+
+                            <h2 class="rojito"> <%= number_to_currency(publication.precio,precision: 0,separator:".",delimiter: ".") %> </h2>
+                            </br>
+                            </br>
+
+                            <strong>Dormitorios :</strong> <%= publication.dormitorio %>
+                             </br>
+                             <strong>Baños :</strong> <%= publication.baño %>
+                         </br>
+                            <strong>Estacionamientos :</strong> <%= publication.estacionamiento %>
+
+                        
+
+
+                            
+                            </br>
+                            </br>
+                            </br>
+
+
+                                  
+
+                                   
+
+                               
+
+
+                                    
+                                
+                            </div>
+                        </div>
+                        
+
+
+                            
+                      </div>
+
+                      <%end%>
+
+
+
+
+
+
+
+
+
+
+
+            
+              
+
+
+
+
+
+
+
+</div>
+
+
+
+</body>
+</html>
+
+
+
+ 
+
+
+
+
+ 
+
+
