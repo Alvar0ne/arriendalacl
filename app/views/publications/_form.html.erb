@@ -1,7 +1,54 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <style>
+
+    body
+        {
+            background: url('http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/07/white-background-9.jpg') fixed;
+            background-size: cover;
+            padding: 15px;
+            margin: 0;
+        }  
+
+        </style> 
+
+
+    </head>
+
+    <body>
+
+
+
+
+
+
+
+       
+
+       </br>
+   </br>
+
+
+ 
+
+             
 <%= form_for(@publication) do |f| %>
   <% if @publication.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@publication.errors.count, "error") %> prohibited this publication from being saved:</h2>
+      <% if publication.errors.count == 1 %>
+      <h2> 1 Error no permite que la publicacion se realice:</h2> 
+
+
+      <%else%>
+
+      <h2><%=publication.errors.count%> errores no permiten que la publicacion se realice:</h2>
+
+      <%end%>
 
       <ul>
       <% @publication.errors.full_messages.each do |message| %>
@@ -10,44 +57,238 @@
       </ul>
     </div>
   <% end %>
+       
 
-  <div class="field">
-    <%= f.label :titulo %><br>
-    <%= f.text_field :titulo %>
+<div class="col-md-8">
+
+<div class="well well-sm">
+
+<div class="container">
+
+    
+  
+  
+  
+      
+                <!-- Form Name -->
+                <div class="col-md-7">
+
+                <legend>Nueva Publicacion</legend>
+              </div>
+
+
+            <div class="row">
+                
+                <div class="col-xs-6">
+                    <label >Titulo</label>
+        
+                        <%= f.text_field :titulo ,class: 'form-control' , placeholder: 'Titulo'  %>
+                    
+                </div>
+
+           </div>
+
+            
+
+            </br>
+            
+             
+              
+
+
+           
+
+
+
+
+
+              <div class="row">
+
+              
+                <div class="col-md-3">
+                       <%= f.label :region_id, "Region" %><br />
+                       
+          
+                   <%= f.collection_select :region_id, Region.order(:nombre), :id, :nombre, include_blank: true ,class: "form-control"%>
+                
+                </div>
+
+
+           </div>
+
+           </br>
+
+           <div class="row">
+
+
+           
+                <div class="col-xs-3">
+                    <%= f.label :comuna_id, "Comuna" %><br />
+          
+           <%= f.grouped_collection_select :comuna_id, Region.order(:nombre), :comunas , :nombre ,:id, :nombre, include_blank: true %>
+
+                   
+                </div>
+           
+               
+         </div>
+
+         </br>
+
+
+                     
+             
+
+        
+              <div class="row">
+
+              
+                <div class="col-xs-1">
+               
+            
+                    <label>Tipo &nbsp;</label>
+                   
+                        <%= f.select(:tipo, options_for_select([['Casa', 'Casa'], ['Departamento', 'Departamento'],['Parcela', 'Parcela']])) %>
+                    </div>
+
+                      <div class="col-xs-1">
+                     </div>
+              
+                </div>
+
+
+
+
+               </br>
+             
+              
+
+             <div class="row">
+
+                 <div class="col-xs-2">
+
+
+
+                    <label> Precio  </label>
+
+
+                   
+
+                        <%= f.text_field :precio ,class: 'form-control' , placeholder: 'Precio'  %> 
+                    </div>
+
+                     <div class="col-xs-1">
+                     </div>
+              
+
+              
+                <div class="col-xs-2">
+                    <label >Superficie</label>
+                   
+                        <%= f.text_field :superficie ,class: 'form-control' , placeholder: 'Superficie' + ' Mt2'%> 
+                </div>
+              </div>
+
+
+
+
+
+                   </br>
+             
+
+              
+              <div class="row">
+                <div class="col-xs-3">
+                    <label >Dormitorios</label>
+             
+                         <%= f.select(:dormitorio, options_for_select([['1 dormitorio', '1'], ['2 dormitorios', '2'],['3 dormitorios', '3'],['4 o mas dormitorios', '4']])) %>
+                    </div>
+                
+           
+            
+
+              
+                <div class="col-xs-3">
+                    <label>Baños</label>
+                    
+                         <%= f.select(:baño, options_for_select([['1 baño', '1 baño'], ['2 baños', '2'],['3 baños', '3'],['4 o mas baños', '4']]) ) %>
+                  
+                </div>
+
+            </div>
+               
+
+                      </br>
+          
+
+               <div class="row">
+
+              
+                <div class="col-xs-3">
+                    <label>Estacionamientos</label>
+
+                  
+                        <%= f.select(:estacionamiento, options_for_select([['1 estacionamiento', '1'], ['2 estacionamientos', '2'],['3 o mas estacionamientos', '3'],['No tiene', '0']])) %>
+                    
+                </div>
+            </div>
+
+
+
+                       </br>
+              </br>
+              
+
+              <div class="row">
+
+                <div class="form-group">
+                    <label class="col-md-1 control-label" for="email">Descripcion</label>
+                    <div class="col-md-6">
+                        <%= f.text_area :descripcion ,class: 'form-control' , placeholder: 'Descripcion'  %> 
+                    </div>
+                </div>
+             
+                    </br>
+
+                </div>
+              </br>
+              </br>
+              </br>
+
+              
+
+                <div class="form-group">
+                   
+                    <div class="col-md-4">
+                        <%= f.submit 'Crear Aviso', class: 'btn btn-primary pull-right col-md-6' %>
+                    </div>
+                </div>
+        
+        
+       
   </div>
-  <div class="field">
-    <%= f.label :precio %><br>
-    <%= f.number_field :precio %>
-  </div>
-  <div class="field">
-    <%= f.label :clasificacion %><br>
-    <%= f.text_field :clasificacion %>
-  </div>
-  <div class="field">
-    <%= f.label :tipo %><br>
-    <%= f.text_field :tipo %>
-  </div>
-  <div class="field">
-    <%= f.label :superficie %><br>
-    <%= f.number_field :superficie %>
-  </div>
-  <div class="field">
-    <%= f.label :dormitorio %><br>
-    <%= f.number_field :dormitorio %>
-  </div>
-  <div class="field">
-    <%= f.label :baño %><br>
-    <%= f.number_field :baño %>
-  </div>
-  <div class="field">
-    <%= f.label :estacionamiento %><br>
-    <%= f.number_field :estacionamiento %>
-  </div>
-  <div class="field">
-    <%= f.label :descripcion %><br>
-    <%= f.text_area :descripcion %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
+</div>
+
+</div>
+
+
 <% end %>
+
+
+
+                 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+                 <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script>
+          <script type="text/javascript">
+               $(document).ready(function() {
+               $('.selectpicker').selectpicker();
+              });
+          </script>
+
+
+
+</body>
+
+
+</html>
+
