@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :publication_attachments
   devise_for :users
   resources :publications
    root to: 'pages#home'

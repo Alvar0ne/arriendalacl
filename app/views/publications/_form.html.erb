@@ -88,7 +88,16 @@
 
            </div>
 
+           </br>
+
             
+            <%= f.fields_for :publication_attachments do |p| %>
+            <div class="field">
+            <%= p.label :avatar %><br>
+            <%= p.file_field :avatar, :multiple => true, name: "publication_attachments[avatar][]" %>
+        </div>
+
+         <% end %>
 
             </br>
             

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170413235553) do
+ActiveRecord::Schema.define(version: 20170506001158) do
 
   create_table "comunas", force: :cascade do |t|
     t.string   "nombre"
@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(version: 20170413235553) do
   end
 
   add_index "comunas", ["region_id"], name: "index_comunas_on_region_id"
+
+  create_table "publication_attachments", force: :cascade do |t|
+    t.integer  "publication_id"
+    t.string   "avatar"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "publications", force: :cascade do |t|
     t.string   "titulo"

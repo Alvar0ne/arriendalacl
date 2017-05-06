@@ -5,6 +5,11 @@
   <%= @publication.titulo %>
 </p>
 
+<% @publication_attachments.each do |p| %>
+  <%= image_tag p.avatar_url %>
+  <%= link_to "Edit Attachment", edit_publication_attachment_path(p) %>
+<% end %>
+
 <p>
   <strong>Precio:</strong>
   <%= @publication.precio %>
