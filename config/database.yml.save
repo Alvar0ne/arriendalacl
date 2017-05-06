@@ -1,0 +1,207 @@
+MacBook-Pro-de-MacBook:~ Alvaro$ ssh root@162.243.55.224
+Welcome to Ubuntu 14.04.4 LTS (GNU/Linux 3.13.0-79-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue May  2 23:40:40 EDT 2017
+
+  System load:  0.0               Processes:           91
+  Usage of /:   7.1% of 29.40GB   Users logged in:     0
+  Memory usage: 47%               IP address for eth0: 162.243.55.224
+  Swap usage:   0%
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+New release '16.04.2 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+---------------------------------------------------------------------
+Thank you for using DigitalOcean's Rails Application.
+The sample Rails application that can be seen at http://162.243.55.224/
+
+You can use the following SFTP credentials to upload your files (using FileZilla/WinSCP/Rsync):
+  * Host: 162.243.55.224
+  * User: rails
+  * Pass: T5Q7OF79kX
+
+You can use the following Postgres database credentials:
+  * User: rails
+  * Pass: v3XtQCqknn
+
+Nginx listens on public IP (162.243.55.224) port 80 and forwards requests to
+Unicorn which listens on a Unix socket file.
+Nginx access log is in /var/log/nginx/access.log and error log is in
+/var/log/nginx/error.log
+Unicorn configuration files are in /etc/unicorn.conf and /etc/default/unicorn
+Unicorn log is in /var/log/unicorn/unicorn.log
+
+To get a list of available gems: gem list
+To get a list of Rubies: rvm list
+To get Gem environment: gem env
+
+You can learn more about using this image here: http://do.co/railsapp
+---------------------------------------------------------------------
+These instructions are stored in /etc/motd.tail for your review.
+Last login: Tue May  2 23:40:40 2017 from pc-8-89-47-190.cm.vtr.net
+root@arriendalacl:~# cd ~rails
+root@arriendalacl:/home/rails# cd arriendalacl
+root@arriendalacl:/home/rails/arriendalacl# nano /var/log/unicorn/unicorn.log
+root@arriendalacl:/home/rails/arriendalacl# nano /var/log/unicorn/unicorn.log
+root@arriendalacl:/home/rails/arriendalacl# rails console
+Running via Spring preloader in process 25899
+Loading development environment (Rails 4.2.3)
+2.2.1 :001 > Publication.last
+PG::ConnectionBad: fe_sendauth: no password supplied
+
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activerecord-4.2.3/lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `initialize'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activerecord-4.2.3/lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `new'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activerecord-4.2.3/lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `connect'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activerecord-4.2.3/lib/active_record/connection_adapters/postgresql_adapter.rb:242:in `initialize'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activerecord-4.2.3/lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `new'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activerecord-4.2.3/lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `postgresql_connection'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activerecord-4.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:438:in `new_connection'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activerecord-4.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:448:in `checkout_new_connection'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activerecord-4.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:422:in `acquire_connection'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activerecord-4.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:349:in `block in checkout'
+	from /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activerecord-4.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:348:in `checkout'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activerecord-4.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:263:in `block in connection'
+	from /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activerecord-4.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:262:in `connection'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activerecord-4.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:571:in `retrieve_connection'
+... 12 levels...
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/commands/console.rb:9:in `start'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/commands/commands_tasks.rb:68:in `console'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/commands.rb:17:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `require'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `block in require'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:240:in `load_dependency'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `require'
+	from /home/rails/arriendalacl/bin/rails:9:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:268:in `load'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:268:in `block in load'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:240:in `load_dependency'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:268:in `load'
+	from /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from -e:1:in `<main>'2.2.1 :002 > xit
+NameError: undefined local variable or method `xit' for main:Object
+	from (irb):2
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/commands/console.rb:110:in `start'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/commands/console.rb:9:in `start'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/commands/commands_tasks.rb:68:in `console'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/commands.rb:17:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `require'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `block in require'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:240:in `load_dependency'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `require'
+	from /home/rails/arriendalacl/bin/rails:9:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:268:in `load'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:268:in `block in load'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:240:in `load_dependency'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:268:in `load'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/spring-2.0.1/lib/spring/commands/rails.rb:6:in `call'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/spring-2.0.1/lib/spring/command_wrapper.rb:38:in `call'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/spring-2.0.1/lib/spring/application.rb:191:in `block in serve'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/spring-2.0.1/lib/spring/application.rb:161:in `fork'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/spring-2.0.1/lib/spring/application.rb:161:in `serve'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/spring-2.0.1/lib/spring/application.rb:131:in `block in run'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/spring-2.0.1/lib/spring/application.rb:125:in `loop'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/spring-2.0.1/lib/spring/application.rb:125:in `run'
+	from /usr/local/rvm/gems/ruby-2.2.1/gems/spring-2.0.1/lib/spring/application/boot.rb:19:in `<top (required)>'
+	from /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /usr/local/rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from -e:1:in `<main>'2.2.1 :003 > exit
+root@arriendalacl:/home/rails/arriendalacl# nano /config/databasy.yml
+root@arriendalacl:/home/rails/arriendalacl# nano /config/database.yml
+root@arriendalacl:/home/rails/arriendalacl# RAILS_ENV=production rake db:migraterake aborted!
+Devise.secret_key was not set. Please add the following to your Devise initializer:
+
+  config.secret_key = 'a4b3077c4e2d6be79eaf1dc6c3533f2166dfe594dfeede292f8407b63f79bc6b86ca6b5458fb0d5da80939e0d44217a354c9300c28b87dad19dc07a81bf7bbd2'
+
+Please ensure you restarted your application after installing Devise or setting the key.
+/usr/local/rvm/gems/ruby-2.2.1/gems/devise-4.2.1/lib/devise/rails/routes.rb:498:in `raise_no_secret_key'
+/usr/local/rvm/gems/ruby-2.2.1/gems/devise-4.2.1/lib/devise/rails/routes.rb:226:in `devise_for'
+/home/rails/arriendalacl/config/routes.rb:4:in `block in <top (required)>'
+/usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/routing/route_set.rb:434:in `instance_exec'
+/usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/routing/route_set.rb:434:in `eval_block'
+/usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/routing/route_set.rb:412:in `draw'
+/home/rails/arriendalacl/config/routes.rb:1:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:268:in `load'
+/usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:268:in `block in load'
+/usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:240:in `load_dependency'
+/usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:268:in `load'
+/usr/local/rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+/usr/local/rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application/routes_reloader.rb:40:in `each'
+/usr/local/rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application/routes_reloader.rb:40:in `load_paths'
+/usr/local/rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application/routes_reloader.rb:16:in `reload!'
+/usr/local/rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application/routes_reloader.rb:26:in `block in updater'
+/usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/file_update_checker.rb:75:in `call'
+/usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/file_update_checker.rb:75:in `execute'
+/usr/local/rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application/routes_reloader.rb:27:in `updater'
+/usr/local/rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application/routes_reloader.rb:7:in `execute_if_updated'
+/usr/local/rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application/finisher.rb:69:in `block in <module:Finisher>'
+/usr/local/rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/initializable.rb:30:in `instance_exec'
+/usr/local/rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/initializable.rb:30:in `run'
+/usr/local/rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/initializable.rb:55:in `block in run_initializers'
+/usr/local/rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/initializable.rb:54:in `run_initializers'
+/usr/local/rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application.rb:352:in `initialize!'
+/home/rails/arriendalacl/config/environment.rb:5:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `require'
+/usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `block in require'
+/usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:240:in `load_dependency'
+/usr/local/rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `require'
+/usr/local/rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application.rb:328:in `require_environment!'
+/usr/local/rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application.rb:457:in `block in run_tasks_blocks'
+/usr/local/rvm/gems/ruby-2.2.1/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+/usr/local/rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+Tasks: TOP => db:migrate => environment
+(See full trace by running task with --trace)
+root@arriendalacl:/home/rails/arriendalacl# git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   config/database.yml
+	modified:   public/assets/.sprockets-manifest-b2a0a60a05e5a5b8f252fe4805353bf1.json
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	public/assets/application-6abd3bf16196d2c065ea86441d365a520c62e403cf246ecd334e46fd4170b497.css
+	public/assets/application-6abd3bf16196d2c065ea86441d365a520c62e403cf246ecd334e46fd4170b497.css.gz
+	public/assets/application-d3ca63704a96879c0c29462527072aefe8fc08f7a8e87980a8b9cfba41f9de42.js
+	public/assets/application-d3ca63704a96879c0c29462527072aefe8fc08f7a8e87980a8b9cfba41f9de42.js.gz
+
+no changes added to commit (use "git add" and/or "git commit -a")
+root@arriendalacl:/home/rails/arriendalacl# nano config/database.yml
+root@arriendalacl:/home/rails/arriendalacl# nano config/database.yml
+
+  GNU nano 2.2.6           File: config/database.yml                            
+
+development:
+  <<: *default
+  database: arriendalacl_development
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: arriendalacl_test
+
+production:
+  <<: *default
+  database: arriendalacl_production
+  username: rails
+  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
