@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20170506001158) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comunas", force: :cascade do |t|
     t.string   "nombre"
     t.integer  "region_id"
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 20170506001158) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "comunas", ["region_id"], name: "index_comunas_on_region_id"
+  add_index "comunas", ["region_id"], name: "index_comunas_on_region_id", using: :btree
 
   create_table "publication_attachments", force: :cascade do |t|
     t.integer  "publication_id"
@@ -46,9 +49,9 @@ ActiveRecord::Schema.define(version: 20170506001158) do
     t.integer  "region_id"
   end
 
-  add_index "publications", ["comuna_id"], name: "index_publications_on_comuna_id"
-  add_index "publications", ["region_id"], name: "index_publications_on_region_id"
-  add_index "publications", ["user_id"], name: "index_publications_on_user_id"
+  add_index "publications", ["comuna_id"], name: "index_publications_on_comuna_id", using: :btree
+  add_index "publications", ["region_id"], name: "index_publications_on_region_id", using: :btree
+  add_index "publications", ["user_id"], name: "index_publications_on_user_id", using: :btree
 
   create_table "regions", force: :cascade do |t|
     t.string   "nombre"
@@ -74,7 +77,11 @@ ActiveRecord::Schema.define(version: 20170506001158) do
     t.integer  "permission_level",       default: 1
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "comunas", "regions"
+  add_foreign_key "publications", "comunas"
+  add_foreign_key "publications", "regions"
+  add_foreign_key "publications", "users"
 end
