@@ -5,19 +5,19 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
   host: localhost
-  username: rails
+  username: Alvaro
   password: <%= ENV['APP_DATABASE_PASSWORD'] %>
 
 development:
   <<: *default
-  database: arriendalacl_development
+  database: demo
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: arriendalacl_test
+  database: demo
 
 production:
   <<: *default
