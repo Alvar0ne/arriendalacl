@@ -59,7 +59,7 @@
   <% end %>
        
 
-<div class="col-md-8">
+<div class="col-md-6">
 
 <div class="well well-sm">
 
@@ -93,8 +93,8 @@
             
             <%= f.fields_for :publication_attachments do |p| %>
             <div class="field">
-            <%= p.label :avatar %><br>
-            <%= p.file_field :avatar, :multiple => true, name: "publication_attachments[avatar][]" %>
+            <%= p.label :avatar , "Imagenes"%><br>
+            <%= p.file_field :avatar, :multiple => true, name: "publication_attachments[avatar][]" ,:class => "btn btn-primary"%>
         </div>
 
          <% end %>
@@ -118,23 +118,23 @@
                        <%= f.label :region_id, "Region" %><br />
                        
           
-                   <%= f.collection_select :region_id, Region.order(:nombre), :id, :nombre, include_blank: true ,class: "form-control"%>
+                   <%= f.collection_select :region_id, Region.order(:nombre), :id, :nombre,{include_blank: true}, {:class=>'form-control'}%>
                 
                 </div>
 
 
-           </div>
+           
 
-           </br>
+           
 
-           <div class="row">
+          
 
 
            
                 <div class="col-xs-3">
                     <%= f.label :comuna_id, "Comuna" %><br />
           
-           <%= f.grouped_collection_select :comuna_id, Region.order(:nombre), :comunas , :nombre ,:id, :nombre, include_blank: true %>
+           <%= f.grouped_collection_select :comuna_id, Region.order(:nombre), :comunas , :nombre ,:id, :nombre,{include_blank: true}, {:class=>'form-control'} %>
 
                    
                 </div>
@@ -152,12 +152,12 @@
               <div class="row">
 
               
-                <div class="col-xs-1">
+                <div class="col-xs-2">
                
             
                     <label>Tipo &nbsp;</label>
                    
-                        <%= f.select(:tipo, options_for_select([['Casa', 'Casa'], ['Departamento', 'Departamento'],['Parcela', 'Parcela']])) %>
+                        <%= f.select(:tipo, options_for_select([['Casa', 'Casa'], ['Departamento', 'Departamento'],['Parcela', 'Parcela']]),{},class: 'form-control') %>
                     </div>
 
                       <div class="col-xs-1">
@@ -186,9 +186,7 @@
                         <%= f.text_field :precio ,class: 'form-control' , placeholder: 'Precio'  %> 
                     </div>
 
-                     <div class="col-xs-1">
-                     </div>
-              
+                    
 
               
                 <div class="col-xs-2">
@@ -207,20 +205,20 @@
 
               
               <div class="row">
-                <div class="col-xs-3">
+                <div class="col-xs-2">
                     <label >Dormitorios</label>
              
-                         <%= f.select(:dormitorio, options_for_select([['1 dormitorio', '1'], ['2 dormitorios', '2'],['3 dormitorios', '3'],['4 o mas dormitorios', '4']])) %>
+                         <%= f.select(:dormitorio, options_for_select([['1 dormitorio', '1'], ['2 dormitorios', '2'],['3 dormitorios', '3'],['4 o mas dormitorios', '4']]),{},class: 'form-control') %>
                     </div>
                 
            
             
 
               
-                <div class="col-xs-3">
+                <div class="col-xs-2">
                     <label>Baños</label>
                     
-                         <%= f.select(:baño, options_for_select([['1 baño', '1 baño'], ['2 baños', '2'],['3 baños', '3'],['4 o mas baños', '4']]) ) %>
+                         <%= f.select(:baño, options_for_select([['1 baño', '1 baño'], ['2 baños', '2'],['3 baños', '3'],['4 o mas baños', '4']]) ,{},class: 'form-control') %>
                   
                 </div>
 
@@ -237,7 +235,7 @@
                     <label>Estacionamientos</label>
 
                   
-                        <%= f.select(:estacionamiento, options_for_select([['1 estacionamiento', '1'], ['2 estacionamientos', '2'],['3 o mas estacionamientos', '3'],['No tiene', '0']])) %>
+                        <%= f.select(:estacionamiento, options_for_select([['1 estacionamiento', '1'], ['2 estacionamientos', '2'],['3 o mas estacionamientos', '3'],['No tiene', '0']]),{},class: 'form-control') %>
                     
                 </div>
             </div>
@@ -300,4 +298,6 @@
 
 
 </html>
+
+
 
