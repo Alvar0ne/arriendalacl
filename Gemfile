@@ -15,11 +15,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
 gem 'carrierwave' 
-gem 'fog' 
 gem 'fog-aws'
 gem 'mini_magick'
-gem 'pg',             '0.17.1'
-
+gem 'pg'
 
 
 
