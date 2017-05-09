@@ -8,7 +8,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
   if Rails.env.production?
-    storage :fog
+  storage :fog
   else
   storage :file
   end
@@ -27,9 +27,15 @@ class AvatarUploader < CarrierWave::Uploader::Base
   #
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
+<<<<<<< HEAD
   def cache_dir
     "/tmp/uploads"
   end
+=======
+
+
+
+>>>>>>> abd2eba59d39b21f277ebae9482fd2c03728a257
   # Process files as they are uploaded:
   # process :scale => [200, 300]
   #
