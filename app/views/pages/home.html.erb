@@ -608,12 +608,16 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
      <div class="col-xs-6 col-md-4">
        <div class="product tumbnail thumbnail-3">
 
-       
+       <% unless publication.publication_attachments.first.nil? %>
+              <%= image_tag publication.publication_attachments.first. avatar_url, :style => "width: 200px; height: 200px;" , class:"img-responsive" %>
+        <%end%>
 
          <div class="caption">
            <h6><%= link_to publication.titulo, publication %></h6><span class="price">
              <del>$24.99</del></span><span class="price sale"><%= publication.precio %></span>
          </div>
+
+         <td><%= button_to 'Eliminar', publication, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
        </div>
 
