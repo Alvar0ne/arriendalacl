@@ -19,26 +19,13 @@
 
 
     /**** BASE ****/
-body {
-    color: #888;   
-}
-a {
-    color: #03a1d1;
-    text-decoration: none!important;
-}
+
 
 /**** LAYOUT ****/
-.list-inline>li {
-    padding: 0 10px 0 0;
-}
-.container-pad {
-    padding: 30px 15px;
-}
-
 
 .sales {
     background: #ffffff none repeat scroll 0 0;
-    border: 1px solid #d4d9e3;
+    border: 7px solid #d4d9e3;
     display: inline-block;
     padding-top: 15px;
     padding-left: 15px;
@@ -46,124 +33,54 @@ a {
     width: 100%;
 }
 
+a{
+    color: #131A46;
 
 
-.sales h2 {
-    color: #8492af;
-    float: left;
-    font-size: 18px;
-    font-weight: 600;
-    margin: 0;
-    padding: 9px 0 0;
 }
-.btn.btn-secondary.btn-lg.dropdown-toggle > span {
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-.sales .dropdown-menu{
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
-    border-radius: 8px;
-    width: 100%;
-    color: #787878;
-}
-.sales .btn-group.open .dropdown-toggle, .btn.active, .btn:active{
-    box-shadow: none;
-}
-.sales .dropdown-menu > a {
-    color: #787878;
-    display: inline-block;
-    font-weight: 800;
-    padding: 9px 0;
-    text-align: center;
-    width: 100%;
-}
-#my-cool-chart svg {
-    width: 100%;
-}
-.sales .dropdown-menu > a:hover{
-    color: #5584FF;   
-}
-
-
-/**** MODULE ****/
-.bgc-fff {
-    background-color: #fff!important;
-}
-.box-shad {
-    -webkit-box-shadow: 1px 1px 0 rgba(0,0,0,.2);
-    box-shadow: 1px 1px 0 rgba(0,0,0,.2);
-}
-.brdr {
-    border: 1px solid #ededed;
-}
-
-/* Font changes */
-.fnt-smaller {
-    font-size: .9em;
-}
-.fnt-lighter {
-    color: #bbb;
-}
-
-/* Padding - Margins */
-.pad-10 {
-    padding: 10px!important;
-}
-.mrg-0 {
-    margin: 0!important;
-}
-.btm-mrg-10 {
-    margin-bottom: 10px!important;
-}
-.btm-mrg-20 {
-    margin-bottom: 20px!important;
-}
-
-/* Color  */
-.clr-535353 {
-    color: #535353;
-}
-
-
-
-
-/**** MEDIA QUERIES ****/
-@media only screen and (max-width: 991px) {
-    #property-listings .property-listing {
-        padding: 5px!important;
-    }
-    #property-listings .property-listing a {
-        margin: 0;
-    }
-    #property-listings .property-listing .media-body {
-        padding: 10px;
-    }
-}
-
-@media only screen and (min-width: 992px) {
-    #property-listings .property-listing img {
-        max-width: 180px;
-    }
-}
-
-
 
 .negrit{
   font-weight:black;
   color:black !important;
   opacity:0.8;
+
 }
 
 .rojito{
   font-weight:black;
-  color:red !important;
-  opacity:0.8;
+  color: red;
+  opacity:0.5;
+  font-size: 30px;
+  font-family: "Arial Hebrew";
 }
 
 
+.sizefo{
+    font-size: 25px !important;
+}
+
+.regionst{
+
+    font-size: 10px;
+
+}
+
+.comunast{
+    font-size: 20px;
+   font-family: "Arial Rounded MT Bold"
+}
+
+.caract{
+    font-size: 15px;
+    font-family: "Arial Rounded MT Bold"
+
+}
+
+.cartel{
+    width: 100px;
+    float: right;
+    opacity:0.6;
+}
 
     </style>
 
@@ -187,50 +104,78 @@ a {
 
 
 
-                            <div class="sales">
+                            <div class="sales border-0"">
+                             <div class="col-md-2">
 
-                              <div class="col-md-5">
-
-
-              
-                              
-                                <h2> <%= link_to publication.titulo, publication %> </h2>
-                            </br>
-                            </br>
-
-                            <%= publication.region.nombre %>
                              </br>
-                             <h2 class="negrit"><%= publication.comuna.nombre %></h2>
-                              </br>
-                              </br>
-                              </br>
-                              </br>
-                               
-                            </div>
-
-                            <div class="col-md-3">
-
-
-
-                            </div>
-
-                            <h2 class="rojito"> <%= number_to_currency(publication.precio,precision: 0,separator:".",delimiter: ".") %> </h2>
-                            </br>
-                            </br>
-
-                            <strong>Dormitorios :</strong> <%= publication.dormitorio %>
-                             </br>
-                             <strong>Baños :</strong> <%= publication.baño %>
-                         </br>
-                            <strong>Estacionamientos :</strong> <%= publication.estacionamiento %>
-
-                        
 
 
                             
+
+                             </br>
+                             
+                           
+
+                             <div class="comunast"><%= publication.comuna.nombre %></div>
+
+                             </br>
+                             
+                            
+                            
+                            <div class="regionst"><%= publication.region.nombre %></div>
+
+                             </div>
+
+
+                              <div class="col-md-3">
+
+                                <% unless publication.publication_attachments.first.nil? %>
+       
+                               <td><%= image_tag publication.publication_attachments.first.avatar_url(:normal) , class:"img-thumbnail"  %></td>
+                                <%end%>
+
+
+                            <%= button_to 'Eliminar', publication, method: :delete%>
+
+                                </br>
+                                </br>
+
+                             </div>
+                              
+                               
+
+                            <div class="col-md-7">
+
+
+                             <div class="sizefo"><a href=""> <%= link_to publication.titulo, publication %> </a></div>
+
+                            <div class="rojito"> <%= number_to_currency(publication.precio,precision: 0,separator:".",delimiter: ".") %> </div>
                             </br>
-                            </br>
-                            </br>
+                         
+
+                            <div class="caract"><i>Dormitorios : </i> <strong><%= publication.dormitorio %> </strong>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i>Superficie :</i> <%= publication.superficie %></div>
+
+                           
+
+                             <div class="caract"><i>Baños :</i> <%= publication.baño %></div>
+                             
+
+
+                            
+                         <%= image_tag("se-vende.png",class:"cartel" )%>
+
+                         
+
+                            </div>
+
+
+                        
+                           
+
+                            
+                            
+                        
 
 
                                   
@@ -249,6 +194,9 @@ a {
 
                             
                       </div>
+
+                      </br>
+                            
 
                       <%end%>
 

@@ -132,8 +132,9 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
   
      
-
+        
        <% unless publication.publication_attachments.first.nil? %>
+
               <%= image_tag publication.publication_attachments.first.avatar_url(:thumb) , class:"img-thumbnail"  %>
         <%end%>
             <div>
@@ -143,7 +144,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 
 
-         <%= button_to 'Eliminar', publication, method: :delete, data: { confirm: 'Are you sure?' } %>
+         <%= button_to 'Eliminar', publication, method: :delete %>
 
          </div>
 
