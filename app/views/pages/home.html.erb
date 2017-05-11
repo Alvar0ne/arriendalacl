@@ -39,31 +39,51 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
         color : red;
        }
 
-       .center{
+       .center2{
         float: center;
 
        }
 
 
 
+.sales {
+    background: #ffffff none repeat scroll 0 0;
+    border: 7px solid #d4d9e3;
+    display: inline-block;
 
-/* ======= Footer ======= */
-.footer {
-  background: #32383e;
-  color: #fff;
-  padding: 10px 0;
+    padding-bottom: 15px;
+    width: 100%;
+    opacity:0.9;
 }
-.footer .copyright {
-  line-height: 1.6;
-  color: #a1aab4;
-  font-size: 14px;
+
+.rojito{
+  font-weight:black;
+  color: red;
+  opacity:0.5;
+  font-size: 30px;
+  font-family: "Arial Hebrew";
+  float: right;
 }
-.footer a {
-  color: #fff;
+
+
+.titlesty{
+
+  font-size: 18px;
+  float : none;
+
 }
-.footer .fa-heart {
-  color: #fb866a;
+
+a{
+    color: #131A46;
+
+
 }
+
+
+
+
+
+
 
 
         
@@ -120,13 +140,17 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 
  
-
   
 
 <% @publications.each do |publication,i| %>
 
 
+
+
   <div class="col-md-3">
+
+
+<div class="sales">
 
    
 
@@ -135,20 +159,32 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
         
        <% unless publication.publication_attachments.first.nil? %>
 
-              <%= image_tag publication.publication_attachments.first.avatar_url(:thumb) , class:"img-thumbnail"  %>
+             <div  ><%= image_tag publication.publication_attachments.first.avatar_url(:thumb) , class:"img-thumbnail" %> </div>
         <%end%>
-            <div>
+
+
+            
          
-           <td><%= link_to publication.titulo, publication %> - <%= publication.precio %></td>
+           <div class="col-md-12 titlesty"><a><%= link_to publication.titulo, publication %></a>
+           </br>
+             <div class="rojito"><%= number_to_currency(publication.precio,precision: 0,separator:".",delimiter: ".") %></div>
+             </div>
+             
 
 
+           
+         
+         &nbsp;&nbsp;&nbsp;&nbsp;<strong><%= publication.comuna.nombre %></strong>
+         </br>
+        </br>
+        </br>
+         &nbsp;&nbsp;&nbsp;&nbsp;<%= publication.region.nombre %>
 
-
-         <%= button_to 'Eliminar', publication, method: :delete %>
-
-         </div>
+         
 
      
+
+</div>
 
 </div>
 

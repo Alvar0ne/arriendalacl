@@ -40,8 +40,9 @@
 
 
   .page {
-    padding: 5px 30px 30px 30px;   /* AGRANDAMOS EL AVISO O ACHICAMOS DE ANCHO */
+    padding: 5px 30px 30px 100px;   /* AGRANDAMOS EL AVISO O ACHICAMOS DE ANCHO */
     max-width: 1200px;
+    opacity: 0.9;
     
     font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
  
@@ -137,7 +138,8 @@ html, body {
 
 
 .price span {
-     color: #ff9f1a; }
+     color: #ff9f1a !important; 
+   }
 
 
  .product-description{
@@ -150,16 +152,19 @@ html, body {
 {
   
   color: black;
-  font-family: 'DejaVu Sans';
+  font-family: 'Abadi MT Condensed Light';
+  text-transform: capitalize;
+  text-transform: uppercase;
   border-bottom: 3px solid #696969;
   font-size: 30px;
   font-weight: 400;
   line-height: 72px;
   letter-spacing: 10px;
-  margin-bottom: 57px;
+  margin-bottom: 15px;
   text-align: center;
   text-indent: 24px;
   opacity: 0.7;
+
   
 }
 
@@ -183,8 +188,25 @@ color: #999;
   left:850px;
 }
 
+.descrp{
+  font-size: 25px;
+}
 
 
+.casa{
+
+  width: 50px;
+}
+
+.descrp2{
+  font-size: 20px;
+}
+
+
+.casa2{
+
+  width: 40px;
+}
 
 }
 
@@ -206,6 +228,11 @@ color: #999;
 
 
     <h1 class="titulo-ok"><%= @publication.titulo %></h1>
+    <div class="descrp2"><%= image_tag("lugar.png",class:"casa2" )%>&nbsp;<%= @publication.region.nombre %>
+   &nbsp;&nbsp;<%= image_tag("gps.png",class:"casa2" )%>&nbsp;<%= @publication.comuna.nombre %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= image_tag("precio.png",class:"casa" )%> <strong> <span class="descrp" style="color: #ff9f1a"> <%=number_to_currency(@publication.precio,precision: 0,separator:".",delimiter: ".") %></span></strong> </div>
+    </br>
+    
+
     <div class="container float-ok">
        <div class="row">
     
@@ -216,7 +243,7 @@ color: #999;
     <div class="sp-loading"><img src="images/sp-loading.gif" alt=""><br>CARGANDO IMAGENES</div>
     <div class="sp-wrap">
 
-      <a ><%= image_tag @publication.publication_attachments.first. avatar_url %></a>
+      <a ><%= image_tag @publication.publication_attachments.first. avatar_url(:large) %></a>
       <% unless @publication.publication_attachments.second.nil? %>
       <a ><%= image_tag @publication.publication_attachments.second. avatar_url %></a>
       <%end%>
@@ -232,40 +259,43 @@ color: #999;
       
     </div>
 
-    <h4 class="price">Precio: <span> <%= number_to_currency(@publication.precio,precision: 0,separator:".",delimiter: ".") %></span></h4>
+    
+
     <br>
     <ul>
-      <li><%= @publication.region.nombre %></li>
-      <li><%= @publication.comuna.nombre %></li>
-      <br>
-      <h5 class="colors"><strong>Tipo:</strong>
-              <%= @publication.tipo %>
+ 
+    
+              <div class="descrp"><%= image_tag("casa.png",class:"casa" )%><strong>Tipo:</strong>
+              &nbsp;<%= @publication.tipo %></div>
+
+
         
-            </h5>
 
-            <h5 class="colors"><strong>Superficie:</strong>
-              <%= @publication.superficie %>
+            
+           <div class="descrp"><%= image_tag("sup3.png",class:"casa" )%><strong>Superficie:</strong>
+              &nbsp;<%= @publication.superficie %></div>
         
-            </h5>
+          
 
 
-            <h5 class="colors"><strong>Dormitorios:</strong>
-              <%= @publication.dormitorio %>
+            <div class="descrp"><%= image_tag("dorm.png",class:"casa" )%><strong>Dormitorios:</strong>
+              &nbsp;<%= @publication.dormitorio %></div>
         
-            </h5>
-
-              <h5 class="colors"><strong>Baños:</strong>
-              <%= @publication.baño %>
+            
+              <div class="descrp"><%= image_tag("baños.png",class:"casa" )%><strong>Baños:</strong>
+              &nbsp;<%= @publication.baño %></div>
         
-            </h5>
-
-              </h5>
-
-              <h5 class="colors"><strong>Estacionamientos:</strong>
-              <%= @publication.estacionamiento %>
         
-            </h5>
-            <h5><strong> Descripcion:</strong> </h5>
+
+          
+
+              <div class="descrp"><%= image_tag("estaci.png",class:"casa" )%><strong>Estacionamientos:</strong>
+              &nbsp;<%= @publication.estacionamiento %></div>
+
+              </br>
+        
+          
+            <div class="descrp"><strong> Descripcion:</strong> </div>
       <p class="product-description"><%= @publication.descripcion %></p>
       
     </ul>

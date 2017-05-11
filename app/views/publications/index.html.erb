@@ -31,6 +31,7 @@
     padding-left: 15px;
     padding-bottom: 1px;
     width: 100%;
+    opacity:0.8;
 }
 
 a{
@@ -137,8 +138,7 @@ a{
 
                             <%= button_to 'Eliminar', publication, method: :delete%>
 
-                                </br>
-                                </br>
+                             
 
                              </div>
                               
@@ -156,6 +156,8 @@ a{
                             <div class="caract"><i>Dormitorios : </i> <strong><%= publication.dormitorio %> </strong>
                             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i>Superficie :</i> <%= publication.superficie %></div>
 
+                            <%= image_tag("se-vende.png",class:"cartel" )%>
+
                            
 
                              <div class="caract"><i>Baños :</i> <%= publication.baño %></div>
@@ -163,7 +165,7 @@ a{
 
 
                             
-                         <%= image_tag("se-vende.png",class:"cartel" )%>
+                       
 
                          
 
