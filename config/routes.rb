@@ -7,6 +7,8 @@ Rails.application.routes.draw do
    root to: 'pages#home'
 
 
+
+get 'motivo' => 'pages#motivo', as: :motivo
 get 'about' => 'pages#about', as: :about
 
   # The priority is based upon order of creation: first created -> highest priority.

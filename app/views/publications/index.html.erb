@@ -156,7 +156,18 @@ a{
                             <div class="caract"><i>Dormitorios : </i> <strong><%= publication.dormitorio %> </strong>
                             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i>Superficie :</i> <%= publication.superficie %></div>
 
+                            <%if (publication.motivo==1) %>
+
                             <%= image_tag("se-vende.png",class:"cartel" )%>
+
+
+                            <% else %>
+
+                            <%= image_tag("searrienda.png",class:"cartel" )%>
+
+                            <% end %>
+
+
 
                            
 
@@ -222,6 +233,7 @@ a{
 
 
 </div>
+
 
 
 

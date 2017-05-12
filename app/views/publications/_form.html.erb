@@ -34,6 +34,8 @@
    </br>
 
 
+
+
  
 
              
@@ -77,9 +79,13 @@
               </div>
 
 
+             
+
             <div class="row">
                 
                 <div class="col-xs-6">
+
+
                     <label >Titulo</label>
         
                         <%= f.text_field :titulo ,class: 'form-control' , placeholder: 'Titulo'  %>
@@ -103,11 +109,10 @@
             
              
               
-
+             <%= f.hidden_field :motivo , :value => @motivo_recibido %>
 
            
-
-
+           
 
 
 

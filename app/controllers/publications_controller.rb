@@ -15,8 +15,10 @@ class PublicationsController < ApplicationController
 
   # GET /publications/new
   def new
-    @publication = Publication.new
-    @publication_attachment = @publication.publication_attachments.build
+   @motivo_recibido = params[:motivo]
+   @publication = Publication.new
+   @publication_attachment = @publication.publication_attachments.build
+
   end
 
   # GET /publications/1/edit
@@ -74,6 +76,6 @@ class PublicationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def publication_params
-      params.require(:publication).permit(:titulo, :precio, :clasificacion, :tipo, :superficie, :dormitorio, :baño, :estacionamiento, :descripcion,:region_id,:comuna_id, publication_attachments_attributes: [:id, :publication_id, :avatar])
+      params.require(:publication).permit(:titulo, :precio,:motivo, :clasificacion, :tipo, :superficie, :dormitorio, :baño, :estacionamiento, :descripcion,:region_id,:comuna_id, publication_attachments_attributes: [:id, :publication_id, :avatar])
     end
 end
