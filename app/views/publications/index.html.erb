@@ -83,12 +83,230 @@ a{
     opacity:0.6;
 }
 
+.form
+
     </style>
 
     </head>
 
 
     <body>
+
+
+    <div class="col-md-3"
+
+
+<%= search_form_for @q do |f| %>
+
+        
+
+            
+         
+
+
+
+          
+
+          
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-md-5 col-md-offset-3 col-lg-offset-0">
+      <div class="well">
+      <h3 align="center">Buscador</h3>
+        <form class="form-horizontal">
+
+
+           <div class="form-group">
+            <%= f.label :titulo_cont , "Palabra clave",class: 'control-label' %>
+            <div class="input-group">
+            <%= f.search_field :titulo_cont ,class: 'form-control'%>
+            
+            </div>
+          </div>
+
+
+          <div class="form-group">
+
+          
+
+
+                         <%= f.label :motivo_eq , "¿Que Buscas?",class: 'control-label' %>
+
+                         <div class="row">
+
+          
+
+                         <div class="col-md-5">
+
+            
+                        <%= f.select(:motivo_eq, options_for_select([['', ''],['Comprar', '1'], ['Arrendar', '2']]),{} , {class: 'form-control'} ) %>
+
+                        </div>
+
+                </div>
+
+
+
+
+          </div>
+
+          <div class="form-group">
+            <%= f.label :tipo_cont , "Tipo",class: 'control-label' %>
+
+            <div class="row">
+
+
+                         <div class="col-md-5">
+           <%= f.select(:tipo_cont, options_for_select([['Casa', 'Casa'], ['Departamento', 'Departamento'],['Parcela', 'Parcela']]),{} , {class: 'form-control'}) %>
+          </div>
+          </div>
+          </div>
+
+           
+          <div class="form-group">
+
+          <%= f.label :dormitorio_gteq , "Dormitorios",class: 'control-label' %>
+
+          <div class="row">
+
+          
+
+                         <div class="col-md-5">
+
+            
+                         <%= f.select(:dormitorio_gteq, options_for_select([['Min', ''],['1', '1'], ['2', '2'],['3', '3'],['4 o mas', '4']]),{} , {class: 'form-control'} ) %>
+
+                        </div>
+
+
+                         <div class="col-md-5">
+                      
+
+                         <%= f.select(:dormitorio_lteq, options_for_select([['Max', ''],['1', '1'], ['2', '2'],['3', '3'],['4 o mas', '4']]),{} , {class: 'form-control'} ) %>
+
+                         </div>
+                       
+</div>
+
+
+          </div>
+
+          <div class="form-group">
+
+                         <%= f.label :baños_gteq , "Baños",class: 'control-label' %>
+                         <div class="row">
+
+                         <div class="col-md-5">
+            
+                        <%= f.select(:baño_gteq, options_for_select([['Min', ''],['1 baño', '1'], ['2 baños', '2'],['3 baños', '3'],['4 o mas baños', '4']]),{} , {class: 'form-control'} ) %>
+                        </div>
+                        <div class="col-md-5">
+    
+                        <%= f.select(:baño_lteq, options_for_select([['Max', ''],['1 baño', '1'], ['2 baños', '2'],['3 baños', '3'],['4 o mas baños', '4']]),{} , {class: 'form-control'} ) %>
+
+                        </div>
+                        </div>
+
+
+
+
+
+
+          </div>
+
+           <div class="form-group">
+
+                         <%= f.label :estacionamiento_gteq , "Estacionamientos",class: 'control-label' %>
+
+                         <div class="row">
+
+                         <div class="col-md-5">
+            
+                      <%= f.select(:estacionamiento_gteq, options_for_select([['Min', ''],['1 estacionamiento', '1'], ['2 estacionamientos', '2'],['3 o mas estacionamientos', '3'],['No tiene', '0']]),{} , {class: 'form-control'} ) %>
+                      </div>
+
+                      <div class="col-md-5">
+
+                       <%= f.select(:estacionamiento_lteq, options_for_select([['Max', ''],['1', '1'], ['2', '2'],['3 o mas', '3'],['No tiene', '0']]),{} , {class: 'form-control'} ) %>
+
+                       </div>
+
+                       </div>
+
+
+
+
+
+
+
+          </div>
+          
+
+
+
+          
+
+
+          <div class="form-group">
+             <%= f.label :precio_gteq , "Precio",class: 'control-label' %>
+
+             <div class="row">
+
+                         <div class="col-md-5">
+            
+              
+               <div class="input-group">
+               <div class="input-group-addon" id="basic-addon2">$</div>
+            <%= f.search_field :precio_gteq ,class: 'form-control'%>
+            
+            </div>
+
+            </div>
+
+            <div class="col-md-5">
+
+
+
+            
+               <div class="input-group">
+               <div class="input-group-addon" id="basic-addon2">$</div>
+            <%= f.search_field :precio_lteq ,class: 'form-control'%>
+            
+            </div>
+
+            </div>
+
+            </div>
+              
+            
+
+
+
+          </div>
+
+
+
+          <%= f.submit 'Buscar' ,class: 'btn btn-danger glyphicon glyphicon-search' %>
+          
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+<%end%>
+
+
+
 
 
 
@@ -234,6 +452,8 @@ a{
 
 </div>
 
+
+<%= will_paginate @publications %>
 
 
 

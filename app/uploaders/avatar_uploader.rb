@@ -34,11 +34,17 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # Process files as they are uploaded:
   # process :scale => [200, 300]
   #
+
+  def check_max_files
+  if files.size > 3
+    errors.add(:files, "must not contain more than 3 files")
+  end
+end
   # def scale(width, height)
   #   # do something
   # end
 
-  # Create different versions of your uploaded files:
+  
   version :thumb do
     process :resize_to_fill => [300, 300]
   end

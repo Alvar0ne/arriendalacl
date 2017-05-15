@@ -239,6 +239,8 @@ GEM
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
     pg (0.17.1)
+    polyamorous (1.3.1)
+      activerecord (>= 3.0)
     rack (1.6.5)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -268,6 +270,12 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.18.0)
     rake (12.0.0)
+    ransack (1.8.2)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      i18n
+      polyamorous (~> 1.3)
     rbvmomi (1.11.2)
       builder (~> 3.0)
       json (>= 1.8)
@@ -316,6 +324,7 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    will_paginate (3.1.5)
     xml-simple (1.1.5)
 
 PLATFORMS
@@ -333,6 +342,7 @@ DEPENDENCIES
   mini_magick
   pg
   rails (= 4.2.3)
+  ransack
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
@@ -340,3 +350,7 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   unicorn
   web-console (~> 2.0)
+  will_paginate (~> 3.1.0)
+
+BUNDLED WITH
+   1.14.6

@@ -4,7 +4,8 @@ class PublicationsController < ApplicationController
   # GET /publications
   # GET /publications.json
   def index
-    @publications = Publication.all
+    @q = Publication.ransack(params[:q])
+    @publications = @q.result.paginate(page: params[:page],per_page:8)
   end
 
   # GET /publications/1
