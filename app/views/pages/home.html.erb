@@ -80,8 +80,30 @@ a{
 }
 
 
+.regiones{
+  width: 200px;
+}
 
 
+.porte{
+  width: 160px;
+  height: 40px;
+  font-size: 18px;
+
+}
+
+
+.ofss1{
+  position: relative;
+  left: 90px;
+
+}
+
+.ofss{
+  position: relative;
+  left: 180px;
+  top: 8px;
+}
 
 
 
@@ -132,12 +154,81 @@ a{
  
 
  
+<div class="row ofss1">
 
+
+
+<%= link_to "Aisén",  publications_path( :region_id => "1"),class:"btn btn-info porte" %>
+
+
+
+
+<%= link_to "Los Lagos",  publications_path( :region_id => "2"),class:"btn btn-info porte" %>
+
+
+<%= link_to "Los Rios",  publications_path( :region_id => "3"),class:"btn btn-info porte" %>
+
+
+<%= link_to "La Araucanía",  publications_path( :region_id => "4"),class:"btn btn-info porte" %>
+
+
+<%= link_to "Biobío",  publications_path( :region_id => "5"),class:"btn btn-info porte" %>
+
+
+
+<%= link_to "Maule",  publications_path( :region_id => "6"),class:"btn btn-info porte" %>
+
+
+
+<%= link_to "O'Higgins",  publications_path( :region_id => "7"),class:"btn btn-info porte" %>
+
+<%= link_to "Valparaíso",  publications_path( :region_id => "8"),class:"btn btn-info porte" %>
+</div>
+
+<div class="row ofss">
+
+
+<%= link_to "Santiago",  publications_path( :region_id => "9"),class:"btn btn-info porte" %>
+
+
+<%= link_to "Coquimbo",  publications_path( :region_id => "10"),class:"btn btn-info porte" %>
+
+
+<%= link_to "Atacama",  publications_path( :region_id => "11"),class:"btn btn-info porte" %>
+
+
+
+
+
+
+
+<%= link_to "Antofagasta",  publications_path( :region_id => "12"),class:"btn btn-info porte" %>
+
+
+<%= link_to "Tarapacá",  publications_path( :region_id => "13"),class:"btn btn-info porte" %>
+
+
+<%= link_to "Arica",  publications_path( :region_id => "14"),class:"btn btn-info porte" %>
+
+
+
+</div>
+
+
+
+</br>
+</br>
+
+</br>
+</br>
+
+</br>
+</br>
 
  
 
 
-
+<div class="row">
 
  
   
@@ -199,7 +290,7 @@ a{
 
 
 
- 
+ </div>
 
 
 

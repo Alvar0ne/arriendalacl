@@ -47,6 +47,12 @@ a{
 
 }
 
+.statico{
+  position: fixed;
+ 
+  
+}
+
 .rojito{
   font-weight:black;
   color: red;
@@ -93,7 +99,16 @@ a{
     <body>
 
 
-    <div class="col-md-3"
+
+
+
+
+
+
+    <div class="col-md-3">
+
+
+    
 
 
 <%= search_form_for @q do |f| %>
@@ -142,6 +157,55 @@ a{
 
             
                         <%= f.select(:motivo_eq, options_for_select([['', ''],['Comprar', '1'], ['Arrendar', '2']]),{} , {class: 'form-control'} ) %>
+
+                        </div>
+
+                </div>
+
+
+
+
+          </div>
+
+          <div class="form-group">
+
+          
+              <%= f.hidden_field :region_id_eq , :value => @region_recibida %>
+
+                         
+
+                         <div class="row">
+
+          
+
+                         <div class="col-md-5">
+
+            
+                        
+
+                        </div>
+
+                </div>
+
+      </div>
+
+      <div class="form-group">
+
+          
+
+
+                         <%= f.label :comuna_id_eq , "Comuna",class: 'control-label' %>
+
+                         <div class="row">
+
+          
+
+                         <div class="col-md-5">
+
+
+
+                         <%= f.collection_select :comuna_id_eq, Comuna.order(:nombre).where(:region_id => @region_recibida), :id, :nombre,{include_blank: true}, {:class=>'form-control'}%>
+
 
                         </div>
 
@@ -286,9 +350,11 @@ a{
 
           </div>
 
+          
 
+         
 
-          <%= f.submit 'Buscar' ,class: 'btn btn-danger glyphicon glyphicon-search' %>
+          <%= f.button ' Buscar' ,name:"region_id", value: @region_recibida , class: 'btn btn-danger glyphicon glyphicon-search' %>
           
 
 
@@ -311,7 +377,7 @@ a{
 
 
 
-<div class="col-md-9 ">
+<div class="col-md-9">
 
 
 
@@ -458,6 +524,8 @@ a{
 
 
 </body>
+
+
 </html>
 
 

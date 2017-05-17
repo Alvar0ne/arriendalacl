@@ -13,3 +13,4 @@ jQuery ->
    else
    	$('#publication_comuna_id').empty()
     $('#publication_comuna_id').parent().hide()
+

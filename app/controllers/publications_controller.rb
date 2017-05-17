@@ -4,8 +4,12 @@ class PublicationsController < ApplicationController
   # GET /publications
   # GET /publications.json
   def index
+    
+   
+    @region_recibida = params[:region_id]
+    @comunas = Comuna.where(:region_id => @region_recibida)
     @q = Publication.ransack(params[:q])
-    @publications = @q.result.paginate(page: params[:page],per_page:8)
+    @publications = @q.result.paginate(page: params[:page],per_page:8).where(:region_id => @region_recibida)
   end
 
   # GET /publications/1
