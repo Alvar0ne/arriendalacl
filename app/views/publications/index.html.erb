@@ -15,6 +15,8 @@
             background-size: cover;
             padding: 15px;
             margin: 0;
+
+
         }  
 
 
@@ -190,7 +192,164 @@ a{
 </br>
 
 
-    <div class="col-md-3">
+    
+
+
+
+
+
+
+<div class="col-md-8">
+
+
+
+<% @publications.each do |publication| %>
+
+<div class="row">
+                        <div class="col-md-10">
+
+
+
+
+                            <div class="sales border-0"">
+                             <div class="col-md-2">
+
+                             </br>
+
+
+                            
+
+                             </br>
+                             
+                           
+
+                             <div class="comunast"><%= publication.comuna.nombre %></div>
+
+                             </br>
+                             
+                            
+                            
+                            <div class="regionst"><%= publication.region.nombre %></div>
+
+                             </div>
+
+
+                              <div class="col-md-3">
+
+                                <% unless publication.publication_attachments.first.nil? %>
+       
+                               <td><%= image_tag publication.publication_attachments.first.avatar_url(:normal) , class:"img-thumbnail"  %></td>
+                                <%end%>
+
+
+                            <%= button_to 'Eliminar', publication, method: :delete%>
+
+                             
+
+                             </div>
+                              
+                               
+
+                            <div class="col-md-7">
+
+
+                             <div class="sizefo"><a href=""> <%= link_to publication.titulo, publication %> </a></div>
+
+                            <div class="rojito"> <%= number_to_currency(publication.precio,precision: 0,separator:".",delimiter: ".") %> </div>
+                            </br>
+                         
+
+                            <div class="caract"><i>Dormitorios : </i> <strong><%= publication.dormitorio %> </strong>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i>Superficie :</i> <%= publication.superficie %></div>
+
+                            <%if (publication.motivo==1) %>
+
+                            <%= image_tag("se-vende.png",class:"cartel" )%>
+
+
+                            <% else %>
+
+                            <%= image_tag("searrienda.png",class:"cartel" )%>
+
+                            <% end %>
+
+
+
+                           
+
+                             <div class="caract"><i>Baños :</i> <%= publication.baño %></div>
+                             
+
+
+                            
+                       
+
+                         
+
+                            </div>
+
+
+                        
+                           
+
+                            
+                            
+                        
+
+
+                                  
+
+                                   
+
+                               
+
+
+                                    
+                                
+                            </div>
+                        </div>
+                        
+
+
+                            
+                      </div>
+
+                      </br>
+                            
+
+                      <%end%>
+
+
+
+
+
+
+
+
+
+
+
+            
+              
+
+
+
+
+
+
+
+</div>
+
+
+<%= will_paginate @publications %>
+
+
+
+
+
+
+
+<div class="col-md-4">
 
 
     
@@ -456,155 +615,6 @@ a{
 
 <%end%>
 
-
-
-
-
-
-
-<div class="col-md-9">
-
-
-
-<% @publications.each do |publication| %>
-
-<div class="row">
-                        <div class="col-md-10">
-
-
-
-
-                            <div class="sales border-0"">
-                             <div class="col-md-2">
-
-                             </br>
-
-
-                            
-
-                             </br>
-                             
-                           
-
-                             <div class="comunast"><%= publication.comuna.nombre %></div>
-
-                             </br>
-                             
-                            
-                            
-                            <div class="regionst"><%= publication.region.nombre %></div>
-
-                             </div>
-
-
-                              <div class="col-md-3">
-
-                                <% unless publication.publication_attachments.first.nil? %>
-       
-                               <td><%= image_tag publication.publication_attachments.first.avatar_url(:normal) , class:"img-thumbnail"  %></td>
-                                <%end%>
-
-
-                            <%= button_to 'Eliminar', publication, method: :delete%>
-
-                             
-
-                             </div>
-                              
-                               
-
-                            <div class="col-md-7">
-
-
-                             <div class="sizefo"><a href=""> <%= link_to publication.titulo, publication %> </a></div>
-
-                            <div class="rojito"> <%= number_to_currency(publication.precio,precision: 0,separator:".",delimiter: ".") %> </div>
-                            </br>
-                         
-
-                            <div class="caract"><i>Dormitorios : </i> <strong><%= publication.dormitorio %> </strong>
-                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i>Superficie :</i> <%= publication.superficie %></div>
-
-                            <%if (publication.motivo==1) %>
-
-                            <%= image_tag("se-vende.png",class:"cartel" )%>
-
-
-                            <% else %>
-
-                            <%= image_tag("searrienda.png",class:"cartel" )%>
-
-                            <% end %>
-
-
-
-                           
-
-                             <div class="caract"><i>Baños :</i> <%= publication.baño %></div>
-                             
-
-
-                            
-                       
-
-                         
-
-                            </div>
-
-
-                        
-                           
-
-                            
-                            
-                        
-
-
-                                  
-
-                                   
-
-                               
-
-
-                                    
-                                
-                            </div>
-                        </div>
-                        
-
-
-                            
-                      </div>
-
-                      </br>
-                            
-
-                      <%end%>
-
-
-
-
-
-
-
-
-
-
-
-            
-              
-
-
-
-
-
-
-
-</div>
-
-
-<%= will_paginate @publications %>
 
 
 

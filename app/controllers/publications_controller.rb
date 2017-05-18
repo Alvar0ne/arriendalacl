@@ -1,5 +1,5 @@
 class PublicationsController < ApplicationController
-  before_action :set_publication, only: [:show, :edit, :update, :destroy]
+  before_action :set_publication, only: [:show, :edit, :update, :destroy, :publish]
 
   # GET /publications
   # GET /publications.json
@@ -18,6 +18,8 @@ class PublicationsController < ApplicationController
     @publication_attachments = @publication.publication_attachments.all
   end
 
+
+
   # GET /publications/new
   def new
    @motivo_recibido = params[:motivo]
@@ -26,12 +28,30 @@ class PublicationsController < ApplicationController
 
   end
 
-  # GET /publications/1/edit
+ 
+
+
   def edit
   end
 
-  # POST /publications
-  # POST /publications.json
+
+
+  def indexadmin
+      @publications = Publication.most_recent.in_draft
+  end
+
+
+
+
+  def publish
+      @publication.publish!
+      redirect_to @publication
+   end
+
+
+
+
+
   def create
     if user_signed_in?
 
@@ -91,6 +111,6 @@ class PublicationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def publication_params
-      params.require(:publication).permit(:titulo, :precio,:motivo, :clasificacion, :tipo, :superficie, :dormitorio, :baño, :estacionamiento, :descripcion,:region_id,:comuna_id, publication_attachments_attributes: [:id, :publication_id, :avatar])
+      params.require(:publication).permit(:titulo, :precio,:motivo, :clasificacion, :tipo, :state ,:superficie, :dormitorio, :baño, :estacionamiento, :descripcion,:region_id,:comuna_id, publication_attachments_attributes: [:id, :publication_id, :avatar])
     end
 end

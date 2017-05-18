@@ -4,4 +4,7 @@ class User < ActiveRecord::Base
   has_many :publications 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+
+   include PermissionsConcern
 end

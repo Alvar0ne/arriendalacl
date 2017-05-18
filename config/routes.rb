@@ -3,14 +3,20 @@ Rails.application.routes.draw do
 
   resources :publication_attachments
   devise_for :users
-  resources :publications
+  
    root to: 'pages#home'
 
-
-
+get "/indexadmin", to: "pages#indexadmin"
+get 'estadis' => 'pages#estadis', as: :estadis
 get 'motivo' => 'pages#motivo', as: :motivo
 get 'about' => 'pages#about', as: :about
 get 'misavisos' => 'pages#misavisos', as: :misavisos
+
+resources :publications do
+
+put 'publish', on: :member
+
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

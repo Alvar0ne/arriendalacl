@@ -20,6 +20,7 @@ gem 'mini_magick'
 gem 'pg'
 gem 'ransack'
 gem 'will_paginate', '~> 3.1.0'
+gem 'aasm'
 
 
 

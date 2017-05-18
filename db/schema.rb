@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170512015803) do
+ActiveRecord::Schema.define(version: 20170518044434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,12 +61,13 @@ ActiveRecord::Schema.define(version: 20170512015803) do
     t.integer  "baño"
     t.integer  "estacionamiento"
     t.text     "descripcion"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.integer  "user_id"
     t.integer  "comuna_id"
     t.integer  "region_id"
     t.integer  "motivo"
+    t.string   "state",           default: "in_draft"
   end
 
   add_index "publications", ["comuna_id"], name: "index_publications_on_comuna_id", using: :btree

@@ -27,12 +27,20 @@
 
               <ul >
 
-                 <li class="size-email"> Bienvenido <%= current_user.nombre %> </li>      <li class="size-cerrar"> | </li>
+                 <li class="size-cerrar"> Bienvenido <%= current_user.nombre %> </li>      <li class="size-cerrar"> | </li>
 
                 <li class="size-cerrar" ><%= link_to "Cerrar Sesion", destroy_user_session_path , method: :delete %></li> <li class="size-cerrar">| </li>
 
+                <li class="size-cerrar" ><%= link_to "Mis Avisos", misavisos_path %>
 
+               
+                <%if current_user.is_admin? %>
 
+                 <li class="size-cerrar"> | </li>
+
+              <li ><%= link_to "Panel De Control", indexadmin_path %></li>
+
+              <%end%>
 
               </ul>
 
