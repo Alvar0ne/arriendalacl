@@ -9,4 +9,9 @@ class PagesController < ApplicationController
   	
   end
 
+    def misavisos
+    @publications = current_user.publications.all
+
+    end
+
 end

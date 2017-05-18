@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
 get 'motivo' => 'pages#motivo', as: :motivo
 get 'about' => 'pages#about', as: :about
+get 'misavisos' => 'pages#misavisos', as: :misavisos
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

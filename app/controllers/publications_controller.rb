@@ -33,7 +33,17 @@ class PublicationsController < ApplicationController
   # POST /publications
   # POST /publications.json
   def create
-    @publication = Publication.new(publication_params)
+    if user_signed_in?
+
+    @publication = current_user.publications.new(publication_params)
+
+  else
+      @publication = Publication.new(publication_params)
+
+    end
+
+
+
 
     respond_to do |format|
       if @publication.save
