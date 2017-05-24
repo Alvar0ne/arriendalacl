@@ -35,6 +35,14 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # process :scale => [200, 300]
   #
 
+   process :auto_orient # this should go before all other "process" steps
+  
+   def auto_orient
+   manipulate! do |image|
+    image.tap(&:auto_orient)
+   end
+  end
+
   def check_max_files
   if files.size > 3
     errors.add(:files, "must not contain more than 3 files")
@@ -54,7 +62,7 @@ end
   end
 
    version :large do
-    process :resize_to_limit => [700, 1000]
+    process :resize_to_limit => [700, 800]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

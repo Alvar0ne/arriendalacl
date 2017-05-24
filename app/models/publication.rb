@@ -19,6 +19,8 @@ end
 
 
 
+scope :most_recent, -> { order(id: :desc)}
+
   aasm column: "state" do
 
 	state :in_draft, initial: true
