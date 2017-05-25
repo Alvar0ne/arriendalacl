@@ -168,6 +168,10 @@ html, body {
   
 }
 
+.left1{
+  float: right;
+}
+
 
 
 
@@ -208,8 +212,62 @@ color: #999;
   width: 40px;
 }
 
+
+/* PROFILE */
+
+
+.stats {
+  text-align:center;
+  text-shadow:1px 1px 0px #fff;
+  margin-top:25px;  
+  
+}
+.stats li{
+  width:125px; 
+}
+.stats span{
+  font-family:Helvetica;
+  font-weight:bold;
+  text-shadow:1px 1px 0px #fff;
+  font-size:10em;
+  
+  display:block;
+  line-height:1em;
 }
 
+/* Large desktop */
+@media (min-width: 800px) { 
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) { 
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { 
+  .profile img{
+    width:5px;
+  }
+  .profile h2{
+    font-size:1.7em;
+  }
+  .stats span{
+    font-size: 2em;
+  }
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) { 
+}
+
+
+.sizefono{
+ font-size: 40px;
+}
+
+.opacities{
+  opacity: 0.6;
+}
 
 
   </style>
@@ -220,8 +278,53 @@ color: #999;
   <br>
 
 
+<div class="sizepro">
+<div class="container">
+
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<div class="container profile">
+  <div class="row">
+    <div class="span12">
+
+      <div class="well well-small clearfix">
+
+        <div class="row-fluid">
+
+          <div class="span2">
+             <%= image_tag("profile.png",class:"mg-polaroid" )%>        
+          </div>
 
 
+          <div class="span4">
+          <div style="border-bottom:1px solid black">
+                        
+                          
+             <h2 class="opacities"><%= @publication.nombre %></h2> 
+             </div>
+              </br>   
+            <ul class="unstyled">
+              <li class="sizefono"><i class="icon-phone"></i> +56<%= @publication.fono %></li>
+           
+            </ul>
+          </div>
+          
+            </div><!--/row-->
+      </div>
+      <!--Body content-->
+    </div>
+  </div>
+      
+         
+
+
+</div>
+
+</div>
+</div>
+
+
+<div class="container ">
 
   <div class="page">
 
@@ -306,7 +409,8 @@ color: #999;
 </br>
 
   </div>
-  <br>
+
+
 
 
 
@@ -314,23 +418,6 @@ color: #999;
 
 
 </br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

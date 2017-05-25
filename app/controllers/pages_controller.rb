@@ -8,6 +8,12 @@ before_action :authenticate_admin! , only: [:indexadmin]
     
   end
 
+  def usuarios
+
+    @users = User.all
+
+  end
+
   def about
   	
   end

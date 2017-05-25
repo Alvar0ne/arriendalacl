@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170518044434) do
+ActiveRecord::Schema.define(version: 20170525034613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,8 @@ ActiveRecord::Schema.define(version: 20170518044434) do
     t.integer  "region_id"
     t.integer  "motivo"
     t.string   "state",           default: "in_draft"
+    t.string   "nombre"
+    t.integer  "fono"
   end
 
   add_index "publications", ["comuna_id"], name: "index_publications_on_comuna_id", using: :btree

@@ -267,7 +267,44 @@
               </br>
               </br>
 
-              
+                   <%if user_signed_in? %>
+
+                 <%= f.hidden_field :nombre  , :value => current_user.nombre %>
+
+                  <%= f.hidden_field :fono  , :value => current_user.fono %>
+                 <%end%>
+
+              <%unless user_signed_in? %>
+
+           <legend>Datos Contacto</legend>
+            <div class="row">
+
+              <div class="col-xs-4">
+
+
+                    <label >Nombre</label>
+        
+                        <%= f.text_field :nombre ,class: 'form-control' , placeholder: 'Nombre'  %>
+                    
+                </div>
+
+
+                </div>
+
+
+
+                 <div class="row">
+
+                
+
+                <div class="col-xs-4">
+
+
+                    <label >Telefono</label>
+        
+                        <%= f.text_field :fono ,class: 'form-control' , placeholder: 'Telefono'  %>
+                    
+                </div>
 
                 <div class="form-group">
                    
@@ -275,6 +312,20 @@
                         <%= f.submit 'Crear Aviso', class: 'btn btn-primary pull-right col-md-6' %>
                     </div>
                 </div>
+
+                </div>
+
+
+                <%end%>
+
+               
+
+           
+
+                          </br>
+              </br>
+              </br>
+              
         
         
        

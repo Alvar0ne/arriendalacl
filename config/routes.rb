@@ -10,6 +10,7 @@ get "/indexadmin", to: "pages#indexadmin"
 get 'estadis' => 'pages#estadis', as: :estadis
 get 'motivo' => 'pages#motivo', as: :motivo
 get 'about' => 'pages#about', as: :about
+get 'usuarios' => 'pages#usuarios', as: :usuarios
 get 'misavisos' => 'pages#misavisos', as: :misavisos
 
 resources :publications do
