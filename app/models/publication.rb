@@ -11,6 +11,23 @@ class Publication < ActiveRecord::Base
   belongs_to :user
 
 
+
+ 
+  validates :titulo , :presence => {:message => "es requerido"}
+  validates :precio , :presence => {:message => "es requerido"}
+  validates :region_id , :presence => {:message => "es requerido"}
+  validates :comuna_id , :presence => {:message => "es requerido"}
+  validates :tipo , :presence => {:message => "es requerido"}
+  validates :superficie , :presence => {:message => "es requerido"}
+  validates :dormitorio , :presence => {:message => "es requerido"}
+  validates :baño , :presence => {:message => "es requerido"}
+  validates :descripcion , :presence => {:message => "es requerido"}
+
+
+
+
+
+
   def display_day_published
 
 	"Publicado el #{created_at.strftime('%-b %-d, %Y')}"

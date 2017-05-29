@@ -5,11 +5,13 @@
 <html>
   <head>
 
+  <title>Buscar Avisos</title>
+
 
     <style>
 
 
-    body
+       body
         {
             background: url('http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/07/white-background-9.jpg') fixed;
             background-size: cover;
@@ -18,112 +20,30 @@
             width: 100%
 
 
-        }  
+
+          } 
+
+          a{
+          color: #131A46;
+
+          } 
 
 
-    /**** BASE ****/
+            .porte2{
+            width: 140px;
+            height: 40px;
+            font-size: 18px;
+            background-color: gray;
+            border-color: white;
+            border-width: 1px;
+            opacity: 0.8;
 
-
-/**** LAYOUT ****/
-
-.sales {
-    background: #ffffff none repeat scroll 0 0;
-    border: 7px solid #d4d9e3;
-    display: inline-block;
-    padding-top: 15px;
-    padding-left: 15px;
-    padding-bottom: 1px;
-    width: 100%;
-    opacity:0.8;
-    position: static;
-
-
-}
-
-a{
-    color: #131A46;
-
-}
-
-.absolut{
-position: absolute;
-     top: 50%;
-     left: 0;
-     width: 100%;
-
-
-}
-
-.negrit{
-  font-weight:black;
-  color:black !important;
-  opacity:0.8;
-
-}
-
-.statico{
-  position: fixed;
- 
+          }
   
-}
-
-.rojito{
-  font-weight:black;
-  color: red;
-  opacity:0.5;
-  font-size: 30px;
-  font-family: "Arial Hebrew";
-}
-
-
-.sizefo{
-    font-size: 25px !important;
-}
-
-.regionst{
-
-    font-size: 10px;
-
-}
-
-.comunast{
-    font-size: 20px;
-   font-family: "Arial Rounded MT Bold"
-}
-
-.caract{
-    font-size: 15px;
-    font-family: "Arial Rounded MT Bold"
-
-}
-
-.cartel{
-    width: 100px;
-    float: right;
-    opacity:0.6;
-}
-
-.porte{
-  width: 140px;
-  height: 40px;
-  font-size: 18px;
-  background-color: gray;
-  border-color: white;
-  border-width: 1px;
-  opacity: 0.8;
-
-}
-
-
-
-.ofss{
-  position: relative;
-  left: 30px;
-  top: 8px;
-  float: center;
-}
 
     </style>
+
+
 
     </head>
 
@@ -137,60 +57,20 @@ position: absolute;
 
 
 
-<%= link_to "Aisén",  publications_path( :region_id => "1"),class:"btn btn-info porte" %>
-
-
-
-
-<%= link_to "Los Lagos",  publications_path( :region_id => "2"),class:"btn btn-info porte" %>
-
-
-<%= link_to "Los Rios",  publications_path( :region_id => "3"),class:"btn btn-info porte" %>
-
-
-<%= link_to "La Araucanía",  publications_path( :region_id => "4"),class:"btn btn-info porte" %>
-
-
-<%= link_to "Biobío",  publications_path( :region_id => "5"),class:"btn btn-info porte" %>
-
-
-
-<%= link_to "Maule",  publications_path( :region_id => "6"),class:"btn btn-info porte" %>
-
-
-
-<%= link_to "O'Higgins",  publications_path( :region_id => "7"),class:"btn btn-info porte" %>
-
-
-
-
-
-
-
-<%= link_to "Santiago",  publications_path( :region_id => "9"),class:"btn btn-info porte" %>
-
-<%= link_to "Valparaíso",  publications_path( :region_id => "8"),class:"btn btn-info porte" %>
-
-
-<%= link_to "Coquimbo",  publications_path( :region_id => "10"),class:"btn btn-info porte" %>
-
-
-<%= link_to "Atacama",  publications_path( :region_id => "11"),class:"btn btn-info porte" %>
-
-
-
-
-
-
-
-<%= link_to "Antofagasta",  publications_path( :region_id => "12"),class:"btn btn-info porte" %>
-
-
-<%= link_to "Tarapacá",  publications_path( :region_id => "13"),class:"btn btn-info porte" %>
-
-
-<%= link_to "Arica",  publications_path( :region_id => "14"),class:"btn btn-info porte" %>
-
+<%= link_to "Aisén",  publications_path( :region_id => "1"),class:"btn btn-info porte2" %>
+<%= link_to "Los Lagos",  publications_path( :region_id => "2"),class:"btn btn-info porte2" %>
+<%= link_to "Los Rios",  publications_path( :region_id => "3"),class:"btn btn-info porte2" %>
+<%= link_to "La Araucanía",  publications_path( :region_id => "4"),class:"btn btn-info porte2" %>
+<%= link_to "Biobío",  publications_path( :region_id => "5"),class:"btn btn-info porte2" %>
+<%= link_to "Maule",  publications_path( :region_id => "6"),class:"btn btn-info porte2" %>
+<%= link_to "O'Higgins",  publications_path( :region_id => "7"),class:"btn btn-info porte2" %>
+<%= link_to "Santiago",  publications_path( :region_id => "9"),class:"btn btn-info porte2" %>
+<%= link_to "Valparaíso",  publications_path( :region_id => "8"),class:"btn btn-info porte2" %>
+<%= link_to "Coquimbo",  publications_path( :region_id => "10"),class:"btn btn-info porte2" %>
+<%= link_to "Atacama",  publications_path( :region_id => "11"),class:"btn btn-info porte2" %>
+<%= link_to "Antofagasta",  publications_path( :region_id => "12"),class:"btn btn-info porte2" %>
+<%= link_to "Tarapacá",  publications_path( :region_id => "13"),class:"btn btn-info porte2" %>
+<%= link_to "Arica",  publications_path( :region_id => "14"),class:"btn btn-info porte2" %>
 
 
 </div>
@@ -248,7 +128,7 @@ position: absolute;
 
                                 <% unless publication.publication_attachments.first.nil? %>
        
-                               <td><%= image_tag publication.publication_attachments.first.avatar_url(:normal) , class:"img-thumbnail"  %></td>
+                               <td><%= image_tag publication.publication_attachments.first.avatar_url(:normal) , class:"img-thumbnail" , alt: publication.titulo %></td>
                                 <%end%>
 
 
@@ -274,12 +154,12 @@ position: absolute;
 
                             <%if (publication.motivo==1) %>
 
-                            <%= image_tag("se-vende.png",class:"cartel" )%>
+                            <%= image_tag("se-vende.png",class:"cartel" , alt: "Anuncio se vende")%>
 
 
                             <% else %>
 
-                            <%= image_tag("searrienda.png",class:"cartel" )%>
+                            <%= image_tag("searrienda.png",class:"cartel" , alt: "Anuncio se arrienda")%>
 
                             <% end %>
 

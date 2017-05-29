@@ -1,4 +1,48 @@
 
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 40px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0;
+    background-color: #c00;
+    color: #fff;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+label {
+  display: block;
+}
+
+
+
+
+
 .clase1 {
         font-size: 1.0rem;
         color: #787878;
@@ -101,4 +145,101 @@
   .posts.index .card {
     height: 415px;
   }
+}
+
+
+
+.sales {
+    background: #ffffff none repeat scroll 0 0;
+    border: 7px solid #d4d9e3;
+    display: inline-block;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 1px;
+    width: 100%;
+    opacity:0.8;
+    position: static;
+
+
+}
+
+
+
+.absolut{
+position: absolute;
+     top: 50%;
+     left: 0;
+     width: 100%;
+
+
+}
+
+.negrit{
+  font-weight:black;
+  color:black !important;
+  opacity:0.8;
+
+}
+
+.statico{
+  position: fixed;
+ 
+  
+}
+
+.rojito{
+  font-weight:black;
+  color: red;
+  opacity:0.5;
+  font-size: 30px;
+  font-family: "Arial Hebrew";
+}
+
+
+.sizefo{
+    font-size: 25px !important;
+}
+
+.regionst{
+
+    font-size: 10px;
+
+}
+
+.comunast{
+    font-size: 20px;
+   font-family: "Arial Rounded MT Bold"
+}
+
+.caract{
+    font-size: 15px;
+    font-family: "Arial Rounded MT Bold"
+
+}
+
+.cartel{
+    width: 100px;
+    float: right;
+    opacity:0.6;
+}
+
+
+  .porte2{
+  width: 140px;
+  height: 40px;
+  font-size: 18px;
+  background-color: gray;
+  border-color: white;
+  border-width: 1px;
+  opacity: 0.8;
+
+}
+
+
+
+.ofss{
+  position: relative;
+  left: 30px;
+  top: 8px;
+  float: center;
 }
