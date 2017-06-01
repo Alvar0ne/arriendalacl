@@ -46,7 +46,7 @@
          opacity:0.5;
          font-size: 30px;
          font-family: "Arial Hebrew";
-         float: right;
+         
        }
 
 
@@ -97,7 +97,7 @@
        {
          
          color: black;
-         font-family: 'Abadi MT Condensed Light';
+         font-family: 'Open Sans', sans-serif;
          text-transform: capitalize;
          text-transform: uppercase;
          
@@ -140,6 +140,14 @@
     border-radius: 10px !important; 
 }
 
+
+ .descripav {
+  padding-left: 10px;
+ }
+
+ a{
+  font-size: 18px;
+ }
         
 </style>
 
@@ -331,20 +339,19 @@
 
             
          
-           <div class="col-md-12 titlesty"><a><%= link_to publication.titulo, publication %></a>
-           </br>
+           <div class="descripav"><a><%= link_to publication.titulo, publication %></a>
+           
              <div class="rojito"><%= number_to_currency(publication.precio,precision: 0,separator:".",delimiter: ".") %></div>
              </div>
              
-
-
-           
          
-         &nbsp;&nbsp;&nbsp;&nbsp;<% unless publication.comuna.nil? %><strong><%= publication.comuna.nombre %></strong><%end%>
+         <% unless publication.comuna.nil? %>
+         <strong class="descripav"><%= publication.comuna.nombre %></strong>
+         <%end%>
+
          </br>
-        </br>
-        </br>
-         &nbsp;&nbsp;&nbsp;&nbsp;<%= publication.region.nombre %>
+        
+         <p class="descripav"><%= publication.region.nombre %></p>
 
          
 

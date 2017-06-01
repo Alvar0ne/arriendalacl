@@ -14,12 +14,20 @@ class Publication < ActiveRecord::Base
 
  
   validates :titulo , :presence => {:message => "es requerido"}
+  validates :titulo , length: { maximum: 30 , :message => "muy largo"} , allow_blank: true
   validates :precio , :presence => {:message => "es requerido"}
   validates :region_id , :presence => {:message => "es requerido"}
   validates :tipo , :presence => {:message => "es requerido"}
   validates :dormitorio , :presence => {:message => "es requerido"}
   validates :baño , :presence => {:message => "es requerido"}
   validates :descripcion , :presence => {:message => "es requerido"}
+
+
+  validates :nombre , :presence => {:message => "es requerido"}
+  validates_format_of :nombre, :with => /\A[a-zA-Z\s]+\z/ , allow_blank: true
+
+  validates :fono , :presence => {:message => "es requerido"}
+  validates :fono , length: { is: 9 , :message => "celular debe tener 9 Numeros"} , allow_blank: true
 
 
 
