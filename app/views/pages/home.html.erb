@@ -81,7 +81,64 @@
         width: 100%;
        }
 
+       .noesperes{
+        width: 850px;
+        opacity: 0.9;
+       }
 
+       .casalog{
+        width: 100px;
+        opacity: 0.6;
+       }
+
+        
+
+       .titulo-ok2
+       {
+         
+         color: black;
+         font-family: 'Abadi MT Condensed Light';
+         text-transform: capitalize;
+         text-transform: uppercase;
+         
+         font-size: 30px;
+         font-weight: 400;
+         line-height: 72px;
+         letter-spacing: 10px;
+         margin-bottom: 15px;
+         text-align: center;
+         text-indent: 24px;
+         opacity: 0.7;
+
+         
+       }
+
+
+       .botons{
+       width: 300px;
+       opacity: 0.9;
+  }
+
+  .centrar{
+    display: flex;
+    justify-content: center;
+  }
+
+  .fondopop{
+     background: url('http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/07/white-background-9.jpg') fixed;
+            background-size: cover;
+            padding: 15px;
+            margin: 0;
+            border-color: black;
+            border: 30px;
+  }
+
+
+.modal-content{
+    -webkit-border-radius: 10px !important;
+    -moz-border-radius: 10px !important;
+    border-radius: 10px !important; 
+}
 
         
 </style>
@@ -99,13 +156,17 @@
 
 			<div class="w3ls_banner_info">
 				<div class="container">
-					<div class="w3l_banner_logo">
-						<h2>CL</h2>
-					</div>
-					<h1 class="familis">¡No esperes mas y vende tu propiedad!</h1>
-					<p> Sitio especializado en la venta de inmuebles , ¡ Publica Tu Aviso !</p>
+
+        <div>
+					
+						<%= image_tag("casalog.png",class:"casalog" , alt: "Logo casa")%>
+
+            </div>
+					
+					<%= image_tag("noesperes4.png",class:"noesperes" , alt: "no esperes mas")%>
+					
 					<div class="more">
-						<%= link_to "Publica Ahora! ", motivo_path,class:"btn btn-info" %>
+						<button name="Publica Ahora!" type="button" class="btn btn-info" data-toggle="modal" data-target="#MyModal">¡Publica Ahora! </button>
 					</div>
                      
 
@@ -122,8 +183,45 @@
 </br>
 
 
+
+
+
+
+<div id="MyModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+      <div class="modal-content"> 
+          <div class="modal-body fondopop">
+          
+<div class="row centrar">
+<h1>¿ QUE DESEA HACER? </h1>
+</div>
+
+<div class="row centrar">
+
+
+<%= link_to image_tag("vender2.png",class:"botons" ), new_publication_path( :motivo => "1") %>
+</div>
+
+<div class="row centrar">
+<%= link_to image_tag("arrendar1.png",class:"botons" ), new_publication_path( :motivo => "2") %>
+
+</div>
+
+
+<br>
+
+
+
+
+          </div>
+          
+      </div>
+  </div>
+</div>
  
 <div class="container">
+
+<h2 class="titulo-ok2">¿Donde Buscas?</h2>
  
 <div class="row ofss">
 
@@ -194,9 +292,15 @@
 </br>
 </br>
 
- 
+
+
+
 
  <div class="container">
+
+ <h2 class="titulo-ok">Ultimos Avisos</h2>
+
+ 
 
 
 <div class="row">
@@ -236,7 +340,7 @@
 
            
          
-         &nbsp;&nbsp;&nbsp;&nbsp;<strong><%= publication.comuna.nombre %></strong>
+         &nbsp;&nbsp;&nbsp;&nbsp;<% unless publication.comuna.nil? %><strong><%= publication.comuna.nombre %></strong><%end%>
          </br>
         </br>
         </br>

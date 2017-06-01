@@ -4,6 +4,24 @@
 <head>
 
 
+<style>
+
+.logofinal{
+  width: 300px;
+}
+
+.profilenav{
+  width: 20px;
+  opacity: 0.7;
+}
+
+.blanco{
+  color:white;
+  font-size: 13px;
+}
+</style>
+
+
 </head>
   <body>
 
@@ -13,7 +31,8 @@
 <div class="navigation">
         <div class="container">
           <div class="agileits-logo">
-            <h1><a href="index.html">comprala.cl <span class="w3agile">El mejor sitio para comprar y vender</span></a></h1>
+          <%= image_tag("LOGOFINAL.png",class:"logofinal" , alt: "Logo comprala.cl")%>
+            
           </div>
           <div class="navigation-right">
         
@@ -27,7 +46,7 @@
 
               <ul >
 
-                 <li class="size-cerrar"> Bienvenido <%= current_user.nombre %> </li>      <li class="size-cerrar"> | </li>
+                 <li class="blanco"> <%= image_tag("profile.png",class:"profilenav" )%> Bienvenido <%= current_user.nombre %> </li>      <li class="size-cerrar">  | </li>
 
                 <li class="size-cerrar" ><%= link_to "Cerrar Sesion", destroy_user_session_path , method: :delete %></li> <li class="size-cerrar">| </li>
 

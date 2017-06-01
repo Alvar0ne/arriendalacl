@@ -145,6 +145,7 @@ html, body {
  .product-description{
   font-style: italic;
   font-color: black;
+  font-size: 20px;
  }   
 
 
@@ -199,7 +200,7 @@ color: #999;
 
 .casa{
 
-  width: 50px;
+  width: 40px;
 }
 
 .descrp2{
@@ -331,8 +332,8 @@ color: #999;
 
 
     <h1 class="titulo-ok"><%= @publication.titulo %></h1>
-    <div class="descrp2"><%= image_tag("lugar.png",class:"casa2" )%>&nbsp;<%= @publication.region.nombre %>
-   &nbsp;&nbsp;<%= image_tag("gps.png",class:"casa2" )%>&nbsp;<%= @publication.comuna.nombre %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= image_tag("precio.png",class:"casa" )%> <strong> <span class="descrp" style="color: #ff9f1a"> <%=number_to_currency(@publication.precio,precision: 0,separator:".",delimiter: ".") %></span></strong> </div>
+    <div class="descrp2"><%= image_tag("lugar.png",class:"casa2" )%>&nbsp;<%= @publication.region.nombre%>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<% unless @publication.comuna.nil? %>;&nbsp;<%= image_tag("gps.png",class:"casa2" )%>&nbsp;<%= @publication.comuna.nombre %><%end%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= image_tag("precio.png",class:"casa" )%> <strong> <span class="descrp" style="color: #ff9f1a"> <%=number_to_currency(@publication.precio,precision: 0,separator:".",delimiter: ".") %></span></strong> </div>
     </br>
     
 
@@ -373,10 +374,12 @@ color: #999;
 
 
         
-
+            <% unless @publication.superficie.nil? %>
             
            <div class="descrp"><%= image_tag("sup3.png",class:"casa" )%><strong>Superficie:</strong>
               &nbsp;<%= @publication.superficie %></div>
+
+              <%end%>
         
           
 
@@ -399,6 +402,7 @@ color: #999;
         
           
             <div class="descrp"><strong> Descripcion:</strong> </div>
+            </br>
       <p class="product-description"><%= @publication.descripcion %></p>
       
     </ul>

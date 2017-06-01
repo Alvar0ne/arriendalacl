@@ -1,294 +1,170 @@
 
 
-<% provide(:page_title, "Nueva Cuenta ") %>
-<% provide(:blog_active, 'active') %>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+    <head> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
 
+    <!-- Website CSS style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 
-
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-
-
-<style>
-
-body{
-     
-        
-            background: url('http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/07/white-background-9.jpg') fixed;
-            background-size: cover;
-            padding: 15px;
-            margin: 0;
-          
-  
-
-}
-
-.register-form{
-      font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 18px;
-   left: 45%;
-    top: 45%;
-    position: absolute;
-    -webkit-transform: translate3d(-50%, -50%, 0);
-    -moz-transform: translate3d(-50%, -50%, 0);
-    transform: translate3d(-50%, -50%, 0);
-}
-
-.regbutton{    
-    height: 50px;
-    width: 200px;
-    background-color:tomato;
-    border-radius: 0px;
-    font-size: 18px;
-    color:white;
-    border: none !important;
-    margin-bottom: 5px;
-}
-.regbutton:hover{    
-    color: white;
-    background-color:#aa422f;
-}
-.regbutton:active{    
-    color: white;
-    background-color:#aa422f;
-}
-.logbutton{    
-    height: 50px;
-    width: 200px;
-    background-color:yellowgreen;
-    border-radius: 0px;
-    font-size: 18px;
-    color:white;
-    border: none !important;
-    margin-bottom: 5px;
-}
-.logbutton:hover{    
-    color: white;
-    background-color:darkolivegreen;
-}
-.logbutton:active{    
-    color: white;
-    background-color:darkolivegreen;
-}
-
-
-
-.register-form label{   /*COLOR LETRA */
-    color: black;
-    opacity: 0.7;
+    <!-- Website Font style -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     
-}
-.register-form input{
-    margin-bottom: 5px;
-    width: 430px;
-    height: 40px;
-    border-radius: 0px;
-}
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 
-
-/*/////////////////// */
-
-
-blockquote{
-    border-left:none
+    <title>Admin</title>
+    <style>
+    .main{
+  margin-top: 70px;
 }
 
-.quote-badge{
-    background-color: rgba(0, 0, 0, 0.2);   
+h1.title { 
+  font-size: 50px;
+  font-family: 'Passion One', cursive; 
+  font-weight: 400; 
 }
 
-.quote-box{
-    
-    overflow: hidden;
-    margin-top: -50px;
-    padding-top: -100px;
-    border-radius: 17px;
-    background-color: #B5B5B5;
-    margin-top: 25px;
-    color:white;
-    width: 325px;
-    box-shadow: 2px 2px 2px 2px #E0E0E0;
-    
+hr{
+  width: 10%;
+  color: #fff;
 }
 
-.quotation-mark{
-    
-    margin-top: -10px;
-    font-weight: bold;
-    font-size:100px;
-    color:white;
-    
-     font-family: 'Open Sans Condensed', sans-serif;
-    
+.form-group{
+  margin-bottom: 15px;
 }
 
-.quote-text{
-    
-    font-size: 19px;
-    margin-top: -65px;
+label{
+  margin-bottom: 15px;
 }
 
-
-.notifi-reg
-{
-  position:absolute;
-  left:1000px;
+input,
+input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
 }
 
+.main-login{
+  background-color: #fff;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 
+}
 
-</style>
+.main-center{
+  margin-top: 30px;
+  margin: 0 auto;
+  max-width: 330px;
+    padding: 40px 40px;
 
- 
- 
+}
 
+.login-button{
+  margin-top: 5px;
+}
 
-    </head>
+.login-register{
+  font-size: 11px;
+  text-align: center;
+}
 
-  
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row main">
+        <div class="panel-heading">
+                 <div class="panel-title text-center">
+                    <h1 class="title">Crear Cuenta</h1>
+                    <hr />
+                  </div>
+              </div> 
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-
-    <body>
-
-
-
-
-<div class="container">
- <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %> 
-
-
-<div class="notifi-reg">
+              <div class="notifi-reg">
 
              <%= devise_error_messages! %> 
 
            </div>
-<div class="container-fluid">
 
-     <div class="register-form"> 
 
-      <div class="row">   
-       
+        <div class="main-login main-center">
+          <form class="form-horizontal" method="post" action="#">
+            
+            <div class="form-group">
+              <label for="name" class="cols-sm-2 control-label">Nombre</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                  <%= f.text_field :nombre  ,autofocus: true, class:"form-control" %> 
+                </div>
+              </div>
+            </div>
 
-           <div class="col-md-4 col-sm-4 col-lg-4 col-md-offset-5">
-           
+            <div class="form-group">
+              <label for="name" class="cols-sm-2 control-label">Telefono</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                  <%= f.text_field :fono , class:"form-control" %> 
+                </div>
+              </div>
+            </div>
 
-                <label for="firstName">NOMBRE</label>
-             
-               <%= f.text_field :nombre , class:"form-control" %> 
-           </div>            
+            <div class="form-group">
+              <label for="email" class="cols-sm-2 control-label">Email</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                  <%= f.email_field :email, class:"form-control" %>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label for="password" class="cols-sm-2 control-label">Password</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                  <%= f.password_field :password, autocomplete: "off", class:"form-control" %>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="confirm" class="cols-sm-2 control-label">Confirmacion Password</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                  <%= f.password_field :password_confirmation, autocomplete: "off" , class:"form-control" %>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group ">
+               <%= f.submit "Registrarse" , class:"btn btn-primary btn-lg btn-block login-button" %>
+            </div>
+            
+          </form>
+        </div>
       </div>
-
-      
-
-      <div class="row">
-           <div class="col-md-4 col-sm-4 col-lg-4 col-md-offset-5">
-              <label for="email">TELEFONO</label>
-               <%= f.text_field :fono , class:"form-control" %>            
-           </div>            
-      </div>
-
-     
-
-
-
-      <div class="row">
-           <div class="col-md-4 col-sm-4 col-lg-4 col-md-offset-5">
-              <label for="email">EMAIL</label>
-               <%= f.email_field :email, autofocus: true, class:"form-control" %>          
-           </div>            
-      </div>
-      <div class="row">
-           <div class="col-md-8 col-md-offset-5 ">
-              <label for="password">PASSWORD (6 Caracteres minimo)</label>
-             
-             <%= f.password_field :password, autocomplete: "off", class:"form-control" %>            
-           </div>            
-      </div>
-
-
-      <div class="row">
-           <div class="col-md-20 col-sm-4 col-lg-4 col-md-offset-5">
-              <label for="email">CONFIRMACION </label>
-               <%= f.password_field :password_confirmation, autocomplete: "off" , class:"form-control" %>          
-           </div>            
-      </div>
-      <hr>
-           <div class="row">
-           <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 col-md-offset-5">
-        
-           <%= f.submit "Registrarse" , class:"btn btn-default logbutton" %>
-           
-          </div>
-         
-         <%= render "devise/shared/links" %>
-         </div>
-</div>
-
-</div>
     </div>
-
-
-
 
 <%end%>
 
-
-
-
-
- 
-<div class="container">
-    <blockquote class="quote-box">
-      </br>
-      </br>
-      </br>
-      <p class="quotation-mark">
-        
-      </p>
-    </br>
-      <p class="quote-text">
-        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Crear tu cuenta es  gratis
-      </p>
-      
-    </br>
-  </br>
-</br>
-      <p class="quote-text">    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> 
-        Tendras acceso a tu perfil
-      </p>
-
-         </br>
-  </br>
-</br>
- <p class="quote-text">
-       <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Podras administrar tus avisos
-      </p>
-
-
-
-
-
-      <hr>
-      <div class="blog-post-actions">
-        <p class="blog-post-bottom pull-left">
-         
-        </p>
-       
-      </div>
-    </blockquote>
-</div>
-
-
-
-
-
-
-</body>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+  </body>
 </html>
+
+
 
