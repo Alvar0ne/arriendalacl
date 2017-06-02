@@ -764,10 +764,9 @@
                 <div class="user-dashboard">
 
 
-                    <h1>Avisos Pendientes</h1>
+                     <h2 class="titulo-ok">Avisos Pendientes</h2>
 
 
-                            
 
                         	<% @publications.each do |publication| %>
 
@@ -836,6 +835,16 @@
                       </div>
 
                       <%end%>
+
+                   
+
+                            <% if @publications.count==0%>
+
+
+
+                            <h2> <i>No hay publicaciones</i></h2>
+
+                     <%end%>
 
 
                

@@ -333,16 +333,35 @@
         
        <% unless publication.publication_attachments.first.nil? %>
 
+       <%= link_to publication do %>
+
              <div  ><%= image_tag publication.publication_attachments.first.avatar_url(:thumb) , class:"img-thumbnail centerw" %> </div>
+
+         <%end%>
         <%end%>
 
 
             
          
-           <div class="descripav"><a><%= link_to publication.titulo, publication %></a>
+           <div class="descripav"><a><%= link_to publication.titulo.truncate(25), publication %></a>
+
+           <%if publication.motivo==1 %>
            
+             <div class="rojito"><%= number_to_currency(publication.precio,precision: 0,separator:".",delimiter: ".") %>.000.000</div>
+             </div>
+
+             <%end%>
+
+             <%if publication.motivo==2 %>
+
+
              <div class="rojito"><%= number_to_currency(publication.precio,precision: 0,separator:".",delimiter: ".") %></div>
              </div>
+
+             <%end%>
+
+
+
              
          
          <% unless publication.comuna.nil? %>

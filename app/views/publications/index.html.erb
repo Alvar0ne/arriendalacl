@@ -103,23 +103,24 @@
 
                             <div class="sales border-0">
                              <div class="col-md-2">
-
                              </br>
 
 
-                            
-
-                             </br>
                              
                            
 
-                             <div class="comunast"><%= publication.comuna.nombre %></div>
+                             <%= image_tag("gps.png",class:"casa2" )%><div class="comunast"><%= publication.comuna.nombre %></div>
 
-                             </br>
-                             
+                         
                             
                             
                             <div class="regionst"><%= publication.region.nombre %></div>
+
+                             <%if current_user.is_admin? %>
+
+                            <%= button_to 'Eliminar', publication, method: :delete%>
+
+                            <%end%>
 
                              </div>
 
@@ -131,8 +132,8 @@
                                <td><%= image_tag publication.publication_attachments.first.avatar_url(:normal) , class:"img-thumbnail" , alt: publication.titulo %></td>
                                 <%end%>
 
-
-                            <%= button_to 'Eliminar', publication, method: :delete%>
+                              
+                             
 
                              
 
@@ -143,12 +144,28 @@
                             <div class="col-md-7">
 
 
-                             <div class="sizefo"><a href=""> <%= link_to publication.titulo, publication %> </a></div>
+                             <div class="sizefo"><a> <%= link_to publication.titulo, publication %> </a></div>
 
-                            <div class="rojito"> <%= number_to_currency(publication.precio,precision: 0,separator:".",delimiter: ".") %> </div>
+                            <%if publication.motivo==1 %>
+                                       
+                                         <div class="rojito"><%= number_to_currency(publication.precio,precision: 0,separator:".",delimiter: ".") %>.000.000</div>
+                                         </div>
+
+                                         <%end%>
+
+                            <%if publication.motivo==2 %>
+
+
+                                         <div class="rojito"><%= number_to_currency(publication.precio,precision: 0,separator:".",delimiter: ".") %></div>
+                                         </div>
+
+                             <%end%>
+
                             </br>
-                         
 
+
+                         
+                            <div class="caract"><i>Tipo :</i> <%= publication.tipo %></div>
                             <div class="caract"><i>Dormitorios : </i> <strong><%= publication.dormitorio %> </strong>
                             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i>Superficie :</i> <%= publication.superficie %></div>
 
@@ -179,19 +196,6 @@
                             </div>
 
 
-                        
-                           
-
-                            
-                            
-                        
-
-
-                                  
-
-                                   
-
-                               
 
 
                                     
@@ -205,6 +209,7 @@
                       </div>
 
                       </br>
+
                             
 
                       <%end%>
