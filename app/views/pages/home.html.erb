@@ -81,9 +81,17 @@
         width: 100%;
        }
 
+       .img2 {
+    max-width: 100%;
+    height: auto;
+    width: auto/9; /* Bug de ie8 */
+      } 
+
        .noesperes{
         width: 850px;
         opacity: 0.9;
+
+
        }
 
        .casalog{
@@ -170,8 +178,13 @@
 						<%= image_tag("casalog.png",class:"casalog" , alt: "Logo casa")%>
 
             </div>
+            
+
+            
 					
-					<%= image_tag("noesperes4.png",class:"noesperes" , alt: "no esperes mas")%>
+					<%= image_tag("noesperes4.png",class:"noesperes img2" , alt: "no esperes mas")%>
+          
+         
 					
 					<div class="more">
 						<button name="Publica Ahora!" type="button" class="btn btn-info" data-toggle="modal" data-target="#MyModal">¡Publica Ahora! </button>
@@ -371,6 +384,7 @@
          </br>
         
          <p class="descripav"><%= publication.region.nombre %></p>
+         
 
          
 

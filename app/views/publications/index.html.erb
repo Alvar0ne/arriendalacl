@@ -39,6 +39,10 @@
             opacity: 0.8;
 
           }
+
+          .floatrig{
+            float:right;
+          }
   
 
     </style>
@@ -88,12 +92,14 @@
 
 
 
-
 <div class="col-md-8">
 
 
 
+
 <% @publications.each do |publication| %>
+
+
 
 <div class="row">
                         <div class="col-md-12">
@@ -103,7 +109,7 @@
 
                             <div class="sales border-0">
                              <div class="col-md-2">
-                             </br>
+                           
 
 
                              
@@ -116,11 +122,11 @@
                             
                             <div class="regionst"><%= publication.region.nombre %></div>
 
-                             <%if current_user.is_admin? %>
+                             
 
                             <%= button_to 'Eliminar', publication, method: :delete%>
 
-                            <%end%>
+                            
 
                              </div>
 
@@ -193,7 +199,7 @@
 
                          
 
-                            </div>
+                          
 
 
 
@@ -206,7 +212,10 @@
 
 
                             
+                    
+
                       </div>
+
 
                       </br>
 
@@ -218,22 +227,15 @@
 
 
 
-
-
-
-
-
-
-            
-              
-
-
-
-
-
-
-
 </div>
+
+
+
+
+
+
+
+
 
 
 <%= will_paginate @publications %>
@@ -244,23 +246,14 @@
 
 
 
-<div class="col-md-4">
+<div class="col-md-4 floatrig">
 
 
     
 
-
 <%= search_form_for @q do |f| %>
 
-        
-
-            
-         
-
-
-
-          
-
+      
           
 
 

@@ -127,13 +127,17 @@
             <%= f.fields_for :publication_attachments do |p| %>
             <div class="field">
             <%= p.label :avatar , "Imagenes ( 5 max )"%><br>
-            <%= p.file_field :avatar, :multiple => true, name: "publication_attachments[avatar][]" ,:class => "btn btn-primary"%>
+            <%= p.file_field :avatar, name: "publication_attachments[avatar][]" ,:class => "btn btn-primary"%>
+            <%= p.file_field :avatar, name: "publication_attachments[avatar][]" ,:class => "btn btn-primary"%>
+            <%= p.file_field :avatar, name: "publication_attachments[avatar][]" ,:class => "btn btn-primary"%>
+            <%= p.file_field :avatar, name: "publication_attachments[avatar][]" ,:class => "btn btn-primary"%>
         </div>
 
          <% end %>
 
          </div>
          </div>
+
 
             </br>
             

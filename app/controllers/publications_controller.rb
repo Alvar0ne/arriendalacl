@@ -70,7 +70,7 @@ class PublicationsController < ApplicationController
          params[:publication_attachments]['avatar'].each do |a|
          @publication_attachment = @publication.publication_attachments.create!(:avatar => a)
        end
-        format.html { redirect_to @publication, notice: 'Publication was successfully created.' }
+        format.html { redirect_to revision_path, notice: 'Publication was successfully created.' }
         format.json { render :show, status: :created, location: @publication }
       else
         format.html { render :new }

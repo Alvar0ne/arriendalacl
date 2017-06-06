@@ -30,4 +30,8 @@ before_action :authenticate_admin! , only: [:indexadmin]
 
   end
 
+
+  def revision
+  end
+
 end

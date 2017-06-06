@@ -333,7 +333,7 @@ color: #999;
 
     <h1 class="titulo-ok"><%= @publication.titulo %></h1>
     <div class="descrp2"><%= image_tag("lugar.png",class:"casa2" )%>&nbsp;<%= @publication.region.nombre%>
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<% unless @publication.comuna.nil? %>;&nbsp;<%= image_tag("gps.png",class:"casa2" )%>&nbsp;<%= @publication.comuna.nombre %><%end%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= image_tag("precio.png",class:"casa" )%> <strong> <span class="descrp" style="color: #ff9f1a"> <%=number_to_currency(@publication.precio,precision: 0,separator:".",delimiter: ".") %></span></strong> </div>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<% unless @publication.comuna.nil? %>&nbsp;<%= image_tag("gps.png",class:"casa2" )%>&nbsp;<%= @publication.comuna.nombre %><%end%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= image_tag("precio.png",class:"casa" )%> <strong> <span class="descrp" style="color: #ff9f1a"> <%=number_to_currency(@publication.precio,precision: 0,separator:".",delimiter: ".") %></span></strong> </div>
     </br>
     
 
