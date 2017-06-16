@@ -11,6 +11,7 @@ class Publication < ActiveRecord::Base
   belongs_to :user
 
 
+ 
 
  
   validates :titulo , :presence => {:message => "es requerido"}
@@ -27,7 +28,12 @@ class Publication < ActiveRecord::Base
   validates_format_of :nombre, :with => /\A[a-zA-Z\s]+\z/ , allow_blank: true
 
   validates :fono , :presence => {:message => "es requerido"}
-  validates :fono , length: { is: 9 , :message => "celular debe tener 9 Numeros"} , allow_blank: true
+  validates :fono , length: { is: 8 , :message => "celular debe tener 9 Numeros"} , allow_blank: true
+
+
+
+
+
 
 
 

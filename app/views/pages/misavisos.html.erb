@@ -1,44 +1,44 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
 
-    <style>
+  <style>
 
     body
-        {
-            background: url('http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/07/white-background-9.jpg') fixed;
-            background-size: cover;
-            padding: 15px;
-            margin: 0;
-        }  
+    {
+      background: url('http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/07/white-background-9.jpg') fixed;
+      background-size: cover;
+      padding: 15px;
+      margin: 0;
+    }  
 
 
 
 
-       td
-          {
+    td
+    {
 
-           width: 40px;
-           text-align: left;
-          }
-
-
-          h4
-          {
-            text-align: left;
-          }
+     width: 40px;
+     text-align: left;
+   }
 
 
-
-        </style> 
+   h4
+   {
+    text-align: left;
+  }
 
 
 
-  	</head>
+</style> 
 
 
-  	<body>
+
+</head>
+
+
+<body>
 
 
   
@@ -46,101 +46,101 @@
 
 </br>
 
- <div class="col-md-12 well">
+<div class="col-md-12 well">
 
-    <td><%= link_to "Nueva Publicacion", new_publication_path,class:"btn btn-primary" %></td>
-                      
+  <td><%= link_to "Nueva Publicacion", new_publication_path,class:"btn btn-primary" %></td>
+  
 
-                    </div>
+</div>
 
- 
+
 <div class="section">
  <% @publications.each do |publication| %>
 
 
 
-         
-        <div class="section">
-            <div class="container">
-                
-                <div class="row">
-                   
-                </div>
-            </div>
-        </div>
-        <div class="section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <table class="table table-hover table-striped">
-                            <tbody>
-                                <tr>
-
-                                    </td>
-                                    <td>
-
-                                    </td>
-                                    <td>
-                                    <td>
-                                        <%= image_tag publication.publication_attachments.first. avatar_url, :style => "width: 150px; height: 150px;" , class:"img-circle"%>
-                                    </td>
-                                      
-                                    
-
-                                    <td>
-
-                                       </br>
-
-                                       
-                                        
-                                        <h4>
-                                            <b><%= publication.titulo %></b>
-                                        </h4>
-                                        
-                                       
-
-                                    </td>
-                                    <td>
-                                         
-                                    </td>
-                                    <td>
-
-                                      </br>
-
-                                      
-                                        <h4>
-                                            <b>Visitas  </b>
-                                        </h4>
-                                        <a> $ <%= publication.precio %></a>
-
-                                  
-                                    </td>
-                                    <td></td>
-                                    <td>
-                                        <div class="btn-group">
-                                        </br>
-                                        </br>
-                                          
-                                                   <%= button_to 'Eliminar', publication, method: :delete, class:"btn btn-primary",data: { confirm: 'Are you sure?' } %>
-                                               </br>
-                                                <%= link_to "Editar", edit_publication_path(publication) ,class:"btn btn-primary",:method => :get%>
-
-                                        </div>
-                                    </td>
-                                </tr>
-                                
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
+ 
+ <div class="section">
+  <div class="container">
     
+    <div class="row">
+     
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-hover table-striped">
+          <tbody>
+            <tr>
+
+            </td>
+            <td>
+
+            </td>
+            <td>
+              <td>
+                <%= image_tag publication.publication_attachments.first. avatar_url, :style => "width: 150px; height: 150px;" , class:"img-circle"%>
+              </td>
+              
+              
+
+              <td>
+
+              </br>
+
+              
+              
+              <h4>
+                <b><%= publication.titulo %></b>
+              </h4>
+              
+              
+
+            </td>
+            <td>
+             
+            </td>
+            <td>
+
+            </br>
+
+            
+            <h4>
+              <b>Visitas  </b>
+            </h4>
+            <a> $ <%= publication.precio %></a>
+
+            
+          </td>
+          <td></td>
+          <td>
+            <div class="btn-group">
+            </br>
+          </br>
+          
+          <%= button_to 'Eliminar', publication, method: :delete, class:"btn btn-primary",data: { confirm: 'Are you sure?' } %>
+        </br>
+        <%= link_to "Editar", edit_publication_path(publication) ,class:"btn btn-primary",:method => :get%>
+
+      </div>
+    </td>
+  </tr>
+  
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
 
 
 
-             </body>
+
+
+</body>
 </html>
 
-        <%end%>
+<%end%>

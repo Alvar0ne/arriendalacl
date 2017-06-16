@@ -3,7 +3,9 @@ class PublicationAttachment < ActiveRecord::Base
     belongs_to :publication 
     validates_associated :publication
 
-    
+    validates_presence_of :avatar
+
+
 
 
 
